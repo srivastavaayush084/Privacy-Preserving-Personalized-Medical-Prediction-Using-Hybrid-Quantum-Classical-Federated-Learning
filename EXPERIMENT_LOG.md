@@ -136,3 +136,23 @@
 - **Artifacts Generated:**
   - Reports: `research/phase13_3_5/` (6 markdown files: `CALIBRATION_SLOPE_RECONCILIATION.md`, `VALIDATION_RESAMPLING_VERIFICATION.md`, `PATIENT_BOOTSTRAP_SOURCE_AUDIT.md`, `FINAL_TEST_EXECUTION_EVIDENCE.md`, `DCA_FINAL_VERIFICATION.md`, `PHASE_13_3_5_FINAL_REPORT.md`).
   - Results: `results/phase13_3_5/` (`pytest_output.txt`, `verification_manifest.json`, `checksums.sha256`).
+
+---
+
+## [Phase 13.3.6] - Final Cohort, Prediction Artifact and Metric Reconciliation Audit (2026-11-19)
+- **Objective:** Perform source-level reconciliation of Phase 13.3.5 against all historical frozen artifacts; resolve validation patient count discrepancy (198 vs 192); reconcile metric differences (AUROC 0.7658 vs 0.7651, AUPRC 0.2957 vs 0.2798, Raw Brier 0.1106 vs 0.1068, Platt Brier 0.0980 vs 0.0984, MLP Raw Brier 0.1621 vs 0.1118, MLP Platt Brier 0.0964 vs 0.0969, and bootstrap AUPRC CI); recompute all metrics directly from frozen checkpoints; finalize baseline freeze.
+- **Commands Executed:**
+  - Metric recomputation script: evaluated all 10 frozen checkpoints on `X_test.npy` / `y_test.npy` ($N=241$), saved to `results/phase13_3_6/METRIC_RECOMPUTATION.csv`.
+  - Bootstrap recomputation script: evaluated 2,000 patient-clustered paired resamples (seed 42).
+  - SHA-256 verification and manifest creation.
+- **Key Results & Reconciliation:**
+  - Validation cohort: `data/processed_landmark/val_meta.csv` verified at 234 encounters, 198 unique patients, 24 deaths (10.2564% prevalence). Zero missing patients, zero exclusions, 0.00% patient overlap. "192" confirmed as an isolated narrative typographical error in Phase 13.3.5 response text.
+  - Prediction artifact provenance: Evaluated `qnn_eps_inf.pt` and `mlp_eps_inf.pt` directly on test set ($N=241$). Recomputed ground truth: QNN AUROC = 0.7658, AUPRC = 0.2957, Raw Brier = 0.1106, Platt Brier = 0.0980; MLP AUROC = 0.7166, AUPRC = 0.2722, Raw Brier = 0.1621, Platt Brier = 0.0964. Phase 13.3.5 report variations traced to clerical transcription errors in markdown tables. There are no alternative prediction runs; all historical artifacts are verified.
+  - Paired bootstrap: $B=2,000$ patient-clustered resamples confirm $\Delta \text{AUROC} = +0.0494$ ($95\%$ CI: $[-0.0409, +0.1393]$, $p = 0.290$); $\Delta \text{AUPRC} = +0.0244$ ($95\%$ CI: $[-0.0843, +0.1256]$, $p = 0.624$); $\Delta \text{Brier Raw} = -0.0519$ ($p = 0.020$); $\Delta \text{Brier Platt} = +0.0015$ ($p = 0.629$).
+  - Calibration protocol: Platt parameters fitted on validation data ($a_{\text{val}} = 0.4415, b_{\text{val}} = -0.0924$), frozen, and applied out-of-sample. Test Cox slope ($\beta_{\text{test}} = 1.7096$) is an out-of-sample diagnostic evaluation only.
+  - Test suite evidence: 70 passed, 0 failed, 20 warnings in 99.05s across 14 test suites in `results/phase13_3_5/pytest_output.txt`.
+  - Research claims boundaries: Quantum advantage refuted (parity demonstrated); record-level DP only ($|\mathcal{D}\Delta\mathcal{D}'|=1$); simulated SecAgg; pre-clinical evidence.
+  - Audit Decision: **DECISION A (All Cohort Counts, Artifacts, and Metrics Reconciled — Baseline Permanently Frozen)**.
+- **Artifacts Generated:**
+  - Reports: `research/phase13_3_6/` (`PHASE_13_3_6_FINAL_RECONCILIATION_REPORT.md`, `COHORT_COUNT_RECONCILIATION.md`, `PREDICTION_ARTIFACT_PROVENANCE.md`, `BOOTSTRAP_RECONCILIATION.md`, `CALIBRATION_PROTOCOL_FINAL.md`, `TEST_EXECUTION_EVIDENCE.md`).
+  - Results: `results/phase13_3_6/` (`METRIC_RECOMPUTATION.csv`, `verification_manifest.json`, `checksums.sha256`).

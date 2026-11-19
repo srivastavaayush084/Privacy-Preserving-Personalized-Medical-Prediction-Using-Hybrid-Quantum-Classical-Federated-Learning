@@ -179,4 +179,26 @@ python -m pytest tests/
      - `DCA_FINAL_VERIFICATION.md`
      - `PHASE_13_3_5_FINAL_REPORT.md`
      - `pytest_output.txt`, `verification_manifest.json`, `checksums.sha256`
-- **Next Phase:** Phase 14 (IEEE Research Manuscript Preparation) — Baseline frozen; awaiting explicit user instruction.
+- **Next Phase:** Phase 13.3.6 (Final Cohort, Prediction Artifact and Metric Reconciliation Audit)
+
+---
+
+### Phase 13.3.6: Final Cohort, Prediction Artifact and Metric Reconciliation Audit
+- **Status:** **COMPLETED & VERIFIED — DECISION A (Baseline Permanently Frozen)** (November 19, 2026)
+- **Automated Tests:** **70/70 Passing (100% Pass Rate)** across 14 test suites, Exit Code 0.
+- **Audit Findings & Deliverables:**
+  1. **Cohort Count Reconciliation:** Resolved "192" vs "198" validation patient count. Direct inspection of `data/processed_landmark/val_meta.csv` proves exact ground truth: 234 encounters, 198 unique patients, 24 deaths (10.2564% prevalence). Zero missing patients, zero exclusions, and 0.00% patient overlap across train (921), val (198), and test (198). Total cohort: 1,607 stays, 1,317 patients. "192" traced to an isolated typographical error in Phase 13.3.5 conversational summary text.
+  2. **Prediction Artifact Provenance:** Ground truth recomputation from frozen checkpoints (`results/phase13_3_1/checkpoints/qnn_eps_inf.pt` and `mlp_eps_inf.pt`) on the frozen test set ($N=241$) confirms canonical metrics: QNN AUROC = 0.7658 (0.765761), QNN AUPRC = 0.2957 (0.295727), QNN Raw Brier = 0.1106 (0.110555), QNN Platt Brier = 0.0980 (0.097960); MLP AUROC = 0.7166 (0.716633), MLP AUPRC = 0.2722 (0.272248), MLP Raw Brier = 0.1621 (0.162129), MLP Platt Brier = 0.0964 (0.096438). Phase 13.3.5 report variations (0.7651, 0.2798, 0.1068, 0.1118, 0.0984, 0.0969) were traced to clerical transcription errors in markdown tables; no alternative prediction files exist.
+  3. **Paired Bootstrap Reconciliation:** Verified across $B=2,000$ patient-clustered resamples (seed 42). Canonical paired difference distributions: $\Delta \text{AUROC} = +0.0494$ ($95\%$ CI: $[-0.0409, +0.1393]$, $p = 0.290$); $\Delta \text{AUPRC} = +0.0244$ ($95\%$ CI: $[-0.0843, +0.1256]$, $p = 0.624$); $\Delta \text{Brier Raw} = -0.0519$ ($95\%$ CI: $[-0.0933, -0.0087]$, $p = 0.020$); $\Delta \text{Brier Platt} = +0.0015$ ($95\%$ CI: $[-0.0042, +0.0082]$, $p = 0.629$). All 7 criteria verified.
+  4. **Calibration Protocol Finalization:** Confirmed Platt calibrators are trained strictly on validation split ($a_{\text{val}} = 0.4415, b_{\text{val}} = -0.0924$), frozen, and applied out-of-sample. Test Cox slope ($\beta_{\text{test}} = 1.7096$) is an out-of-sample descriptive evaluation diagnostic only.
+  5. **Test Suite Evidence:** Re-verified `results/phase13_3_5/pytest_output.txt` (70 passed, 0 failed, 20 warnings in 99.05s across 14 test modules).
+  6. **Phase 13.3.6 Deliverables (`research/phase13_3_6/` & `results/phase13_3_6/`):**
+     - `PHASE_13_3_6_FINAL_RECONCILIATION_REPORT.md`
+     - `COHORT_COUNT_RECONCILIATION.md`
+     - `PREDICTION_ARTIFACT_PROVENANCE.md`
+     - `METRIC_RECOMPUTATION.csv`
+     - `BOOTSTRAP_RECONCILIATION.md`
+     - `CALIBRATION_PROTOCOL_FINAL.md`
+     - `TEST_EXECUTION_EVIDENCE.md`
+     - `verification_manifest.json`, `checksums.sha256`
+- **Next Phase:** Phase 14 (IEEE Research Manuscript Preparation) — Baseline permanently frozen; awaiting explicit user instruction.
