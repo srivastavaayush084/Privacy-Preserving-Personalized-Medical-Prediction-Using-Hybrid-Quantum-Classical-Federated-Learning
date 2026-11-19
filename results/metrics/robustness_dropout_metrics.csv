@@ -1,0 +1,6 @@
+scenario,dropout_rate,feature_corruption,global_auroc,worst_client_auroc,status
+Baseline (Full Connectivity),0.0,0.0,0.7868,0.6944,Stable
+Moderate Client Dropout (20%),0.2,0.0,0.7792,0.672,Resilient (-0.0076)
+Severe Client Dropout (40%),0.4,0.0,0.7615,0.641,Degraded (-0.0253)
+Minor Hospital Feature Deficit (15%),0.0,0.15,0.7745,0.668,Resilient (-0.0123)
+Severe Hospital Feature Deficit (30%),0.0,0.3,0.748,0.625,Degraded (-0.0388)

@@ -1,0 +1,41 @@
+client_id,hospital_name,model_type,regime,auroc,prauc,brier,ece
+Hospital_Consortium_1,Academic Medical Center Network,classical,1_Global_Only,0.702054794520548,0.2119529177718833,0.25711333751678467,0.45650583118587346
+Hospital_Consortium_1,Academic Medical Center Network,classical,2_Local_FineTuned,0.5102739726027398,0.06655015465084116,0.2985273599624634,0.4992154426388926
+Hospital_Consortium_1,Academic Medical Center Network,classical,3_Hospital_Adapter,0.5410958904109588,0.29658613495870867,0.25501105189323425,0.4538375731412466
+Hospital_Consortium_1,Academic Medical Center Network,classical,4_Adapter_Plus_Calibration,0.5410958904109588,0.29658613495870867,0.2533093988895416,0.4519001547392313
+Hospital_Consortium_2,Regional Health Alliance East,classical,1_Global_Only,0.44999999999999996,0.08994708994708994,0.2706226408481598,0.4742990107763381
+Hospital_Consortium_2,Regional Health Alliance East,classical,2_Local_FineTuned,0.6277777777777778,0.1328042328042328,0.2956872880458832,0.500513371967134
+Hospital_Consortium_2,Regional Health Alliance East,classical,3_Hospital_Adapter,0.5111111111111111,0.20253467240554757,0.21757113933563232,0.41520874840872624
+Hospital_Consortium_2,Regional Health Alliance East,classical,4_Adapter_Plus_Calibration,0.5111111111111111,0.20253467240554757,0.2277911901473999,0.42733331994404866
+Hospital_Consortium_3,Community Healthcare System West,classical,1_Global_Only,0.428125,0.1837160801448898,0.2870525121688843,0.34663769759629903
+Hospital_Consortium_3,Community Healthcare System West,classical,2_Local_FineTuned,0.7989583333333333,0.48607279331484865,0.28450265526771545,0.3473173693606728
+Hospital_Consortium_3,Community Healthcare System West,classical,3_Hospital_Adapter,0.7843749999999999,0.409351089334642,0.2219141721725464,0.2435551897475594
+Hospital_Consortium_3,Community Healthcare System West,classical,4_Adapter_Plus_Calibration,0.7843749999999999,0.409351089334642,0.23050829768180847,0.2584548969017832
+Hospital_Consortium_4,Metropolitan Critical Care Network,classical,1_Global_Only,0.58098223615465,0.19441142524209054,0.22058895230293274,0.3480821014667044
+Hospital_Consortium_4,Metropolitan Critical Care Network,classical,2_Local_FineTuned,0.7847439916405433,0.3657245755974319,0.27106282114982605,0.41539645803217984
+Hospital_Consortium_4,Metropolitan Critical Care Network,classical,3_Hospital_Adapter,0.4994775339602926,0.16599647042467625,0.25423187017440796,0.39346347049790986
+Hospital_Consortium_4,Metropolitan Critical Care Network,classical,4_Adapter_Plus_Calibration,0.4994775339602926,0.16599647042467625,0.2527524530887604,0.39155780295936427
+Hospital_Consortium_5,Rural & Suburban Health System,classical,1_Global_Only,0.4634703196347032,0.23698974428488084,0.23428672552108765,0.4044098295742952
+Hospital_Consortium_5,Rural & Suburban Health System,classical,2_Local_FineTuned,0.408675799086758,0.08700965700965702,0.2980376183986664,0.47698855777330035
+Hospital_Consortium_5,Rural & Suburban Health System,classical,3_Hospital_Adapter,0.8082191780821918,0.6265782828282828,0.2178809493780136,0.40034231204020826
+Hospital_Consortium_5,Rural & Suburban Health System,classical,4_Adapter_Plus_Calibration,0.8082191780821918,0.6265782828282828,0.2280355542898178,0.4121903762032714
+Hospital_Consortium_1,Academic Medical Center Network,quantum,1_Global_Only,0.7534246575342465,0.13139880952380953,0.2710108458995819,0.4717978993793587
+Hospital_Consortium_1,Academic Medical Center Network,quantum,2_Local_FineTuned,0.20547945205479454,0.039107761130005816,0.2613532245159149,0.45947311605725966
+Hospital_Consortium_1,Academic Medical Center Network,quantum,3_Hospital_Adapter,0.6986301369863014,0.1074404761904762,0.20281000435352325,0.39266319940616556
+Hospital_Consortium_1,Academic Medical Center Network,quantum,4_Adapter_Plus_Calibration,0.6986301369863014,0.1074404761904762,0.21735729277133942,0.41057463357974955
+Hospital_Consortium_2,Regional Health Alliance East,quantum,1_Global_Only,0.7833333333333332,0.28968253968253965,0.2691386342048645,0.47459522268128773
+Hospital_Consortium_2,Regional Health Alliance East,quantum,2_Local_FineTuned,0.6888888888888889,0.22166105499438832,0.26545843482017517,0.46938734962826684
+Hospital_Consortium_2,Regional Health Alliance East,quantum,3_Hospital_Adapter,0.6888888888888889,0.09368191721132897,0.2253032773733139,0.42521410896664574
+Hospital_Consortium_2,Regional Health Alliance East,quantum,4_Adapter_Plus_Calibration,0.6888888888888889,0.09368191721132897,0.23319685459136963,0.4341287584531875
+Hospital_Consortium_3,Community Healthcare System West,quantum,1_Global_Only,0.3427083333333334,0.16936021229842352,0.27585557103157043,0.3270425514170998
+Hospital_Consortium_3,Community Healthcare System West,quantum,2_Local_FineTuned,0.571875,0.3174408838743954,0.22646892070770264,0.24656075396035848
+Hospital_Consortium_3,Community Healthcare System West,quantum,3_Hospital_Adapter,0.715625,0.5376957981750612,0.2390933483839035,0.28400616504644094
+Hospital_Consortium_3,Community Healthcare System West,quantum,4_Adapter_Plus_Calibration,0.715625,0.5376957981750612,0.24251051247119904,0.28582252405191727
+Hospital_Consortium_4,Metropolitan Critical Care Network,quantum,1_Global_Only,0.6227795193312435,0.16104976872560173,0.2635985016822815,0.4054309190536032
+Hospital_Consortium_4,Metropolitan Critical Care Network,quantum,2_Local_FineTuned,0.37513061650992685,0.12171900920926584,0.23865272104740143,0.37196130381554976
+Hospital_Consortium_4,Metropolitan Critical Care Network,quantum,3_Hospital_Adapter,0.6886102403343783,0.24720164795768707,0.23294620215892792,0.36732836888760934
+Hospital_Consortium_4,Metropolitan Critical Care Network,quantum,4_Adapter_Plus_Calibration,0.6886102403343783,0.24720164795768707,0.23843269050121307,0.3740597805198358
+Hospital_Consortium_5,Rural & Suburban Health System,quantum,1_Global_Only,0.18493150684931506,0.05194840989425926,0.19390465319156647,0.34673084790193587
+Hospital_Consortium_5,Rural & Suburban Health System,quantum,2_Local_FineTuned,0.4132420091324201,0.11694341268377778,0.22296330332756042,0.39053514977044695
+Hospital_Consortium_5,Rural & Suburban Health System,quantum,3_Hospital_Adapter,0.8150684931506849,0.26531797904346927,0.21784982085227966,0.3884929825987996
+Hospital_Consortium_5,Rural & Suburban Health System,quantum,4_Adapter_Plus_Calibration,0.8150684931506849,0.26531797904346927,0.2278631180524826,0.4000315952904616

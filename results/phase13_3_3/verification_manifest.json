@@ -1,0 +1,66 @@
+{
+  "phase": "13.3.3",
+  "title": "Statistical Robustness, Calibration and Clinical Utility Audit",
+  "system_environment": {
+    "os": "Windows-10-10.0.26200-SP0",
+    "python_version": "3.11.9",
+    "torch_version": "2.14.0+cpu",
+    "sklearn_version": "1.9.1"
+  },
+  "dataset": {
+    "cohort_name": "eICU-CRD 24h Landmark Cohort",
+    "n_total_stays": 1607,
+    "n_unique_patients": 1317,
+    "n_train": 1132,
+    "n_val": 234,
+    "n_test": 241,
+    "test_deaths": 28,
+    "test_prevalence": 0.11618257,
+    "test_unique_patients": 198,
+    "patient_disjoint": true
+  },
+  "prevalence_baseline": {
+    "p_baseline": 0.11618257,
+    "brier_score": 0.102684,
+    "log_loss": 0.359249,
+    "ece_10bin": 0.0
+  },
+  "bootstrap_configuration": {
+    "replicates": 2000,
+    "clustering_unit": "uniquepid",
+    "resampling_level": "patient_level",
+    "random_seed": 42
+  },
+  "checkpoints_audited": {
+    "qnn_eps_inf": {
+      "path": "results/phase13_3_1/checkpoints/qnn_eps_inf.pt",
+      "size": 8326
+    },
+    "mlp_eps_inf": {
+      "path": "results/phase13_3_1/checkpoints/mlp_eps_inf.pt",
+      "size": 27593
+    }
+  },
+  "paired_quantum_classical_comparison": {
+    "delta_auroc_mean": 0.0494,
+    "delta_auroc_95_ci": [
+      -0.0409,
+      0.1393
+    ],
+    "delta_auroc_p_value": 0.29,
+    "delta_auprc_mean": 0.0244,
+    "delta_auprc_95_ci": [
+      -0.0843,
+      0.1256
+    ],
+    "delta_auprc_p_value": 0.624,
+    "delta_brier_platt_mean": 0.0015,
+    "delta_brier_platt_95_ci": [
+      -0.0042,
+      0.0082
+    ],
+    "delta_brier_platt_p_value": 0.629,
+    "quantum_advantage_supported": false
+  },
+  "files": {}
+}

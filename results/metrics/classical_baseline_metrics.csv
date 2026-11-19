@@ -1,0 +1,6 @@
+Model,Val_AUROC,Val_PRAUC,Val_Brier,Val_ECE,Test_AUROC,Test_PRAUC,Test_Accuracy,Test_F1,Test_Sensitivity,Test_Specificity,Test_Brier,Test_ECE,ROC_Plot,PR_Plot
+Logistic Regression,0.7518,0.2628,0.1694,0.2562,0.817,0.3569,0.7328,0.3713,0.775,0.728,0.1948,0.2879,results/figures\roc_logistic_regression.png,results/figures\pr_logistic_regression.png
+Random Forest,0.762,0.2902,0.1124,0.2023,0.8411,0.3403,0.855,0.4,0.475,0.898,0.1216,0.2013,results/figures\roc_random_forest.png,results/figures\pr_random_forest.png
+Support Vector Machine,0.7166,0.2156,0.0674,0.0178,0.7948,0.2508,0.8982,0.0,0.0,1.0,0.0842,0.0272,results/figures\roc_support_vector_machine.png,results/figures\pr_support_vector_machine.png
+Multi-Layer Perceptron,0.7169,0.2342,0.1622,0.2001,0.7944,0.3295,0.715,0.3488,0.75,0.711,0.1804,0.2203,results/figures\roc_multi-layer_perceptron.png,results/figures\pr_multi-layer_perceptron.png
+XGBoost,0.7439,0.2945,0.1172,0.1738,0.8445,0.3849,0.799,0.3577,0.55,0.8272,0.1286,0.19,results/figures\roc_xgboost.png,results/figures\pr_xgboost.png

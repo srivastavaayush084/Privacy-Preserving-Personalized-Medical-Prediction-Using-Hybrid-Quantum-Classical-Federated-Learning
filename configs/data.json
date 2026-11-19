@@ -1,0 +1,16 @@
+{
+  "raw_data_dir": "eicu-collaborative-research-database-demo-2.0.1",
+  "processed_data_dir": "data/processed",
+  "metadata_dir": "data/metadata",
+  "target_column": "hospital_mortality",
+  "prediction_horizon_hours": 24,
+  "min_hospital_patients": 10,
+  "split_ratios": {
+    "train": 0.70,
+    "val": 0.15,
+    "test": 0.15
+  },
+  "random_seed": 42,
+  "missingness_threshold": 0.60
+}
+

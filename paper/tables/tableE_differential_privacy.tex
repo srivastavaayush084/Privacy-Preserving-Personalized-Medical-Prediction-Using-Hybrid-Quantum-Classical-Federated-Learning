@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering
+\caption{Formal Per-Sample Differential Privacy Evaluation ($\delta = 10^{-5}$, Holdout $N=393$)}
+\label{tab:differential_privacy}
+\begin{tabular}{lcccccc}
+\hline
+\textbf{Architecture} & \textbf{Target $\epsilon$} & \textbf{Achieved $\epsilon$} & \textbf{Test AUROC} & \textbf{Test AUPRC} & \textbf{Brier Loss} & \textbf{MIA AUC} \\
+\hline
+Classical DP-MLP & 1.0 & 0.9979 & 0.6187 [0.531, 0.704] & 0.1782 & 0.1001 & 0.4972 \\
+Classical DP-MLP & 2.0 & 1.9996 & 0.7073 [0.628, 0.783] & 0.2262 & 0.0999 & 0.5107 \\
+Classical DP-MLP & 4.0 & 3.9984 & 0.7607 [0.686, 0.832] & 0.2758 & 0.0996 & 0.5195 \\
+Classical DP-MLP & 8.0 & 7.9906 & 0.7771 [0.704, 0.846] & 0.3131 & 0.0994 & 0.5256 \\
+Classical DP-MLP & $\infty$ (Non-Priv) & $\infty$ & 0.7923 [0.716, 0.862] & 0.3063 & 0.1565 & 0.5711 \\
+\hline
+Hybrid DP-QNN & 1.0 & 0.9927 & 0.6723 [0.591, 0.751] & 0.2110 & 0.0937 & 0.5267 \\
+Hybrid DP-QNN & 2.0 & 1.9901 & 0.6709 [0.589, 0.750] & 0.2323 & 0.0971 & 0.5274 \\
+Hybrid DP-QNN & 4.0 & 3.9985 & 0.6850 [0.603, 0.763] & 0.2419 & 0.0983 & 0.5225 \\
+Hybrid DP-QNN & 8.0 & 7.9976 & 0.6944 [0.613, 0.772] & 0.2552 & 0.0987 & 0.5283 \\
+Hybrid DP-QNN & $\infty$ (Non-Priv) & $\infty$ & 0.8062 [0.738, 0.871] & 0.2819 & 0.0985 & 0.5620 \\
+\hline
+\end{tabular}
+\end{table}

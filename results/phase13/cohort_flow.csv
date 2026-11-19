@@ -1,0 +1,7 @@
+stage,criteria,stays_remaining,patients_remaining,stays_excluded,deaths,mortality_prevalence
+Raw eICU Demo v2.0.1,All records in patient table,2520,1841,0,212,0.08412698412698413
+Exclusion: Missing Outcome,hospitaldischargestatus is null / unrecorded,2492,1820,28,212,0.08507223113964688
+Final Modeled Cohort,Valid hospitaldischargestatus (first 24h predictors),2492,1820,0,212,0.08507223113964688
+Split: Train Set (70%),Patient-disjoint group split seed=42,1712,1274,0,142,0.08294392523364486
+Split: Validation Set (15%),Patient-disjoint group split seed=42,387,273,0,30,0.07751937984496124
+Split: Test Set (15%),Patient-disjoint group split seed=42,393,273,0,40,0.10178117048346055

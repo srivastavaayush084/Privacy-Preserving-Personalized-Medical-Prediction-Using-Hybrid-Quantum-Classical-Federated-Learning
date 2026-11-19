@@ -1,0 +1,68 @@
+{
+  "phase": "13.3.1",
+  "description": "DP Expected Batch Size and Sampling Rate Consistency Re-Run",
+  "timestamp_utc": "2026-11-19T14:13:10Z",
+  "execution_duration_sec": 492.9,
+  "environment": {
+    "os": "Windows-10-10.0.26200-SP0",
+    "python_version": "3.11.9",
+    "torch_version": "2.14.0+cpu",
+    "cuda_available": false
+  },
+  "landmark_cohort": {
+    "total_icu_stays": 1607,
+    "unique_patients": 1317,
+    "train_encounters": 1132,
+    "test_encounters": 241,
+    "test_mortality_prevalence": 0.1162
+  },
+  "dp_configuration_option_A": {
+    "mathematical_principle": "B_exp = q * N under Poisson subsampling with q = 1 / steps_per_epoch",
+    "qnn": {
+      "steps_per_epoch": 36,
+      "epochs": 5,
+      "total_steps": 180,
+      "sample_rate_q": 0.027777777777777776,
+      "expected_batch_size": 31.444444444444443,
+      "nominal_batch_size": 32,
+      "clipping_bound_C": 1.0,
+      "sensitivity_Delta_2": 1.0,
+      "normalization_divisor": "float(1132 / 36) = 31.444444444444443"
+    },
+    "mlp": {
+      "steps_per_epoch": 18,
+      "epochs": 15,
+      "total_steps": 270,
+      "sample_rate_q": 0.05555555555555555,
+      "expected_batch_size": 62.888888888888886,
+      "nominal_batch_size": 64,
+      "clipping_bound_C": 1.0,
+      "sensitivity_Delta_2": 1.0,
+      "normalization_divisor": "float(1132 / 18) = 62.888888888888886 (corrected from Opacus integer 62)"
+    },
+    "adjacency": "Add/Remove-One-Record Adjacency (|D Delta D'| = 1)",
+    "target_delta": 1e-05,
+    "target_epsilons": [
+      1.0,
+      2.0,
+      4.0,
+      8.0,
+      Infinity
+    ]
+  },
+  "output_artifacts": [
+    "results/phase13_3_1/privacy_utility_metrics.csv",
+    "results/phase13_3_1/dp_accounting_trace.csv",
+    "results/phase13_3_1/paired_statistical_tests.csv",
+    "results/phase13_3_1/checkpoints/mlp_eps_1.0.pt",
+    "results/phase13_3_1/checkpoints/mlp_eps_2.0.pt",
+    "results/phase13_3_1/checkpoints/mlp_eps_4.0.pt",
+    "results/phase13_3_1/checkpoints/mlp_eps_8.0.pt",
+    "results/phase13_3_1/checkpoints/mlp_eps_inf.pt",
+    "results/phase13_3_1/checkpoints/qnn_eps_1.0.pt",
+    "results/phase13_3_1/checkpoints/qnn_eps_2.0.pt",
+    "results/phase13_3_1/checkpoints/qnn_eps_4.0.pt",
+    "results/phase13_3_1/checkpoints/qnn_eps_8.0.pt",
+    "results/phase13_3_1/checkpoints/qnn_eps_inf.pt"
+  ]
+}

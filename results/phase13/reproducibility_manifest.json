@@ -1,0 +1,91 @@
+{
+  "manifest_version": "1.0",
+  "phase": 13,
+  "date": "2026-11-19",
+  "dataset": {
+    "source": "eICU Collaborative Research Database Demo v2.0.1",
+    "raw_dir": "eicu-collaborative-research-database-demo-2.0.1",
+    "processed_dir": "data/processed",
+    "arrays": {
+      "X_train": "data/processed/X_train.npy",
+      "y_train": "data/processed/y_train.npy",
+      "X_val": "data/processed/X_val.npy",
+      "y_val": "data/processed/y_val.npy",
+      "X_test": "data/processed/X_test.npy",
+      "y_test": "data/processed/y_test.npy",
+      "feature_names": "data/processed/feature_names.json",
+      "preprocessor": "data/processed/preprocessor.joblib"
+    },
+    "splits": {
+      "train_meta": "data/processed/train_meta.csv",
+      "val_meta": "data/processed/val_meta.csv",
+      "test_meta": "data/processed/test_meta.csv"
+    }
+  },
+  "checkpoints": {
+    "classical_baselines": {
+      "xgboost": "checkpoints/classical/xgboost_baseline.joblib",
+      "random_forest": "checkpoints/classical/random_forest_baseline.joblib",
+      "mlp": "checkpoints/classical/mlp_baseline.pt"
+    },
+    "quantum_models": {
+      "hybrid_qnn": "checkpoints/quantum/hybrid_qnn_best.pt"
+    },
+    "phase12_federated": {
+      "fedavg_classical_best": "results/phase12/checkpoints/fed_fedavg_classical_best.pt",
+      "fedavg_classical_final": "results/phase12/checkpoints/fed_fedavg_classical_final.pt",
+      "fedprox_classical_best": "results/phase12/checkpoints/fed_fedprox_classical_best.pt",
+      "fedprox_classical_final": "results/phase12/checkpoints/fed_fedprox_classical_final.pt",
+      "fedavg_quantum_best": "results/phase12/checkpoints/fed_fedavg_quantum_best.pt",
+      "fedavg_quantum_final": "results/phase12/checkpoints/fed_fedavg_quantum_final.pt",
+      "fedprox_quantum_best": "results/phase12/checkpoints/fed_fedprox_quantum_best.pt",
+      "fedprox_quantum_final": "results/phase12/checkpoints/fed_fedprox_quantum_final.pt"
+    },
+    "phase12_formal_dp": {
+      "classical_dp_mlp_1.0": "results/phase12/checkpoints/formal_dp_mlp_1.0.pt",
+      "classical_dp_mlp_2.0": "results/phase12/checkpoints/formal_dp_mlp_2.0.pt",
+      "classical_dp_mlp_4.0": "results/phase12/checkpoints/formal_dp_mlp_4.0.pt",
+      "classical_dp_mlp_8.0": "results/phase12/checkpoints/formal_dp_mlp_8.0.pt",
+      "classical_dp_mlp_inf": "results/phase12/checkpoints/formal_dp_mlp_inf.pt",
+      "hybrid_dp_qnn_1.0": "results/phase12/checkpoints/formal_dp_qnn_1.0.pt",
+      "hybrid_dp_qnn_2.0": "results/phase12/checkpoints/formal_dp_qnn_2.0.pt",
+      "hybrid_dp_qnn_4.0": "results/phase12/checkpoints/formal_dp_qnn_4.0.pt",
+      "hybrid_dp_qnn_8.0": "results/phase12/checkpoints/formal_dp_qnn_8.0.pt",
+      "hybrid_dp_qnn_inf": "results/phase12/checkpoints/formal_dp_qnn_inf.pt"
+    }
+  },
+  "evaluation_metrics": {
+    "phase11_metrics": {
+      "classical_baselines": "results/metrics/classical_baseline_metrics.csv",
+      "federated_experiments": "results/metrics/federated_experiments_metrics.csv",
+      "personalization": "results/metrics/personalization_experiments_metrics.csv",
+      "privacy_tradeoff": "results/metrics/privacy_utility_tradeoff.csv"
+    },
+    "phase12_metrics": {
+      "advanced_federated": "results/phase12/metrics/advanced_federated_metrics.csv",
+      "advanced_personalization": "results/phase12/metrics/advanced_personalization_metrics.csv",
+      "formal_dp": "results/phase12/metrics/formal_dp_metrics.csv",
+      "secure_aggregation": "results/phase12/metrics/secure_aggregation_benchmark.csv",
+      "quantum_detailed_profile": "results/phase12/metrics/quantum_detailed_profile.csv"
+    },
+    "phase13_audit_metrics": {
+      "cohort_flow": "results/phase13/cohort_flow.csv",
+      "split_integrity": "results/phase13/split_integrity.csv",
+      "privacy_accounting_audit": "results/phase13/privacy_accounting_audit.csv",
+      "secure_aggregation_audit": "results/phase13/secure_aggregation_audit.csv",
+      "phase11_phase12_comparison": "results/phase13/phase11_phase12_comparison.csv"
+    }
+  },
+  "scripts": {
+    "data_pipeline": "scripts/run_data_pipeline.py",
+    "formal_dp": "experiments/privacy/run_formal_dp.py",
+    "advanced_federated": "experiments/federated/run_phase12_federated.py",
+    "advanced_personalization": "experiments/personalization/run_phase12_personalization.py",
+    "secure_aggregation_v2": "scripts/validate_secure_aggregation_v2.py",
+    "quantum_profiling": "experiments/quantum/run_phase12_quantum_profile.py",
+    "cohort_audit": "scripts/audit_phase13_cohort.py",
+    "dp_audit": "scripts/audit_phase13_dp.py",
+    "secure_agg_audit": "scripts/audit_phase13_secure_aggregation.py",
+    "reconciliation": "scripts/audit_phase13_reconciliation.py"
+  }
+}

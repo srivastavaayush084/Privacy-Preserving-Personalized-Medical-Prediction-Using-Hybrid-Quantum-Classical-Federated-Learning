@@ -1,0 +1,41 @@
+{
+  "classical": {
+    "logistic_regression": {
+      "penalty": "l2",
+      "C": 1.0,
+      "max_iter": 1000,
+      "solver": "lbfgs"
+    },
+    "random_forest": {
+      "n_estimators": 100,
+      "max_depth": 8,
+      "min_samples_split": 5,
+      "random_state": 42
+    },
+    "svm": {
+      "C": 1.0,
+      "kernel": "rbf",
+      "probability": true
+    },
+    "mlp": {
+      "hidden_dims": [64, 32, 16],
+      "dropout": 0.2,
+      "learning_rate": 0.001,
+      "epochs": 50,
+      "batch_size": 32
+    }
+  },
+  "quantum": {
+    "num_qubits": 4,
+    "circuit_depth": 2,
+    "encoding": "angle",
+    "entanglement": "strongly_entangling",
+    "shots": null,
+    "simulator": "default.qubit",
+    "classical_bottleneck_dim": 4,
+    "learning_rate": 0.01,
+    "epochs": 30,
+    "batch_size": 16
+  }
+}
+

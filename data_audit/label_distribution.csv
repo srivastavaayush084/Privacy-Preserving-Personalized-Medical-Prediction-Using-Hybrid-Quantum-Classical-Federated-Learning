@@ -1,0 +1,9 @@
+label_name,category,count,percentage
+hospitaldischargestatus,Alive,2280,90.48
+hospitaldischargestatus,Expired,212,8.41
+hospitaldischargestatus,nan,28,1.11
+unitdischargestatus,Alive,2392,94.92
+unitdischargestatus,Expired,126,5.0
+unitdischargestatus,nan,2,0.08
+prolonged_icu_stay_gt_3days,False (<=3 days),1971,78.21
+prolonged_icu_stay_gt_3days,True (>3 days),549,21.79

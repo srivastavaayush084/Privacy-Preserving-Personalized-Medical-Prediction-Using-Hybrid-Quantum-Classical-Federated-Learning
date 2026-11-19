@@ -1,0 +1,116 @@
+{
+  "phase": "13.3",
+  "title": "Final Source-Code Verification, DP Accounting Reproducibility and Experiment Consistency Audit",
+  "timestamp_utc": "2026-11-19T13:45:57Z",
+  "environment": {
+    "os": "Windows-10-10.0.26200-SP0",
+    "python_version": "3.11.9",
+    "torch_version": "2.14.0+cpu"
+  },
+  "audit_decision": "CONDITIONALLY READY FOR MANUSCRIPT DRAFTING",
+  "test_suite_execution": {
+    "command": "python -m pytest tests/",
+    "exit_code": 0,
+    "passed": 67,
+    "failed": 0,
+    "skipped": 0,
+    "warnings": 13,
+    "duration_seconds": 34.97
+  },
+  "schedule_reconciliation": {
+    "qnn_training": {
+      "actual_epochs": 5,
+      "steps_per_epoch": 36,
+      "total_sampler_iterations": 180,
+      "optimizer_updates": 180,
+      "accountant_steps": 180,
+      "sample_rate": 0.027778,
+      "expected_batch_size": 32.0,
+      "superseded_schedule": "Phase 13.1 report proposed 10 epochs (360 steps), superseded in code"
+    },
+    "mlp_training": {
+      "actual_epochs": 15,
+      "steps_per_epoch": 18,
+      "total_sampler_iterations": 270,
+      "optimizer_updates": 270,
+      "accountant_steps": 270,
+      "sample_rate": 0.055556,
+      "expected_batch_size": 62.0
+    }
+  },
+  "dp_accounting_recomputation": {
+    "delta": 1e-05,
+    "mlp_recomputed_epsilons": {
+      "target_1.0": {
+        "sigma": 3.8867,
+        "recomputed": 0.9953,
+        "csv_reported": 0.9953,
+        "match": true
+      },
+      "target_2.0": {
+        "sigma": 2.1924,
+        "recomputed": 1.9954,
+        "csv_reported": 1.9954,
+        "match": true
+      },
+      "target_4.0": {
+        "sigma": 1.3501,
+        "recomputed": 3.9985,
+        "csv_reported": 3.9985,
+        "match": true
+      },
+      "target_8.0": {
+        "sigma": 0.9277,
+        "recomputed": 7.9977,
+        "csv_reported": 7.9977,
+        "match": true
+      }
+    },
+    "qnn_recomputed_epsilons": {
+      "target_1.0": {
+        "sigma": 1.8066,
+        "recomputed": 0.994,
+        "csv_reported": 0.994,
+        "match": true
+      },
+      "target_2.0": {
+        "sigma": 1.189,
+        "recomputed": 1.9959,
+        "csv_reported": 1.9959,
+        "match": true
+      },
+      "target_4.0": {
+        "sigma": 0.8728,
+        "recomputed": 3.9949,
+        "csv_reported": 3.9949,
+        "match": true
+      },
+      "target_8.0": {
+        "sigma": 0.6656,
+        "recomputed": 7.9944,
+        "csv_reported": 7.9944,
+        "match": true
+      }
+    }
+  },
+  "phase13_2_artifact_verification": {
+    "all_checksums_match": true,
+    "verified_files": [
+      "results/phase13_2/dp_accounting_trace.csv",
+      "results/phase13_2/execution_manifest.json",
+      "results/phase13_2/federated_client_identity.csv",
+      "results/phase13_2/paired_statistical_tests.csv",
+      "results/phase13_2/privacy_utility_metrics.csv"
+    ]
+  },
+  "checkpoint_verification": {
+    "checkpoints_tested": 10,
+    "all_checkpoints_reproduce_exact_metrics": true
+  },
+  "statistical_conclusion": {
+    "paired_bootstrap_method": "Patient-clustered paired bootstrap (B=1000)",
+    "quantum_advantage": "REJECTED (all 95% CIs cross zero, p > 0.05)",
+    "federated_node_2_artifact": "AUROC 1.0 is an artifact of N_pos=1 in test set",
+    "federated_personalization": "Site-specific gain on Node 5 (+0.0152); no universal gain across all nodes"
+  }
+}

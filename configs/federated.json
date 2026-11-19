@@ -1,0 +1,18 @@
+{
+  "num_rounds": 10,
+  "clients_per_round": 5,
+  "min_clients": 3,
+  "local_epochs": 3,
+  "batch_size": 16,
+  "strategy": "FedAvg",
+  "fedprox_mu": 0.01,
+  "fraction_fit": 1.0,
+  "fraction_evaluate": 1.0,
+  "client_selection": "all",
+  "client_partitioning": {
+    "type": "natural_hospital",
+    "min_samples_per_client": 15,
+    "fallback_clustering": "region_bedcount"
+  }
+}
+

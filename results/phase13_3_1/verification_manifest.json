@@ -1,0 +1,86 @@
+{
+  "phase": "13.3.1",
+  "title": "Critical DP Expected-Batch-Size and Sampling-Rate Consistency Verification",
+  "timestamp_utc": "2026-11-19T14:13:44Z",
+  "environment": {
+    "os": "Windows-10-10.0.26200-SP0",
+    "python_version": "3.11.9",
+    "torch_version": "2.14.0+cpu"
+  },
+  "final_decision": "B. DP MECHANISM CORRECTED; NEW EXPERIMENTS REQUIRED (and successfully executed in Phase 13.3.1)",
+  "discrepancy_resolution": {
+    "qnn_normalization": {
+      "phase13_2_code_value": 32.0,
+      "phase13_3_1_corrected_value": 31.444444444444443,
+      "formula": "q * N = (1 / 36) * 1132",
+      "unbiased_gradient_expectation_verified": true
+    },
+    "mlp_normalization": {
+      "phase13_2_code_value": 62.0,
+      "phase13_3_1_corrected_value": 62.888888888888886,
+      "formula": "q * N = (1 / 18) * 1132",
+      "opacus_integer_truncation_overridden": true,
+      "unbiased_gradient_expectation_verified": true
+    }
+  },
+  "dp_accounting_verification": {
+    "target_delta": 1e-05,
+    "qnn": {
+      "sample_rate_q": 0.027777777777777776,
+      "total_steps_T": 180,
+      "calibrated_sigmas": {
+        "eps_1.0": {
+          "sigma": 1.8066,
+          "achieved_eps": 0.994
+        },
+        "eps_2.0": {
+          "sigma": 1.189,
+          "achieved_eps": 1.9959
+        },
+        "eps_4.0": {
+          "sigma": 0.8728,
+          "achieved_eps": 3.9949
+        },
+        "eps_8.0": {
+          "sigma": 0.6656,
+          "achieved_eps": 7.9944
+        }
+      }
+    },
+    "mlp": {
+      "sample_rate_q": 0.05555555555555555,
+      "total_steps_T": 270,
+      "calibrated_sigmas": {
+        "eps_1.0": {
+          "sigma": 3.8867,
+          "achieved_eps": 0.9953
+        },
+        "eps_2.0": {
+          "sigma": 2.1924,
+          "achieved_eps": 1.9954
+        },
+        "eps_4.0": {
+          "sigma": 1.3501,
+          "achieved_eps": 3.9985
+        },
+        "eps_8.0": {
+          "sigma": 0.9277,
+          "achieved_eps": 7.9977
+        }
+      }
+    }
+  },
+  "new_checkpoints_generated": 0,
+  "checksum_count": 14,
+  "test_suite_execution": {
+    "command": "python -m pytest tests/",
+    "exit_code": 0,
+    "total_collected": 70,
+    "passed": 70,
+    "failed": 0,
+    "skipped": 0,
+    "warnings": 17,
+    "duration_seconds": 54.77,
+    "status": "ALL TESTS PASSING"
+  }
+}

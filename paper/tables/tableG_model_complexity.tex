@@ -1,0 +1,15 @@
+\begin{table}[t]
+\centering
+\caption{Model Complexity Decomposition and Parameter Footprint Comparison}
+\label{tab:model_complexity}
+\begin{tabular}{lcccccc}
+\hline
+\textbf{Model Representation} & \textbf{Encoder} & \textbf{PQC Layer} & \textbf{Head} & \textbf{Total Params} & \textbf{Quantum Share} & \textbf{Binary Size} \\
+\hline
+Classical DP-MLP (GroupNorm) & 0 & 0 & 0 & 5,537 & 0.00\% & 26.31 KB \\
+Classical Baseline (BatchNorm) & 0 & 0 & 0 & 5,537 & 0.00\% & 26.31 KB \\
+\textbf{Hybrid DP-QNN (4-qubit, L=2)} & \textbf{772} & \textbf{24} & \textbf{161} & \textbf{957} & \textbf{2.51\%} & \textbf{7.69 KB} \\
+PQC Variational Sublayer Only & 0 & 24 & 0 & 24 & 100.00\% & 0.09 KB \\
+\hline
+\end{tabular}
+\end{table}

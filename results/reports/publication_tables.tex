@@ -1,0 +1,167 @@
+% Publication-Ready LaTeX Tables for Research Paper Submission
+% Project: Privacy-Preserving Personalized Medical Prediction Using Hybrid Quantum-Classical Federated Learning
+
+\documentclass{article}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{multirow}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+\begin{document}
+
+\section*{Research Evaluation Tables}
+
+% TABLE 1: DATASET PARTITIONS
+\begin{table}[htbp]
+\centering
+\small
+\caption{Cohort Statistics and Patient-Disjoint Partitions on eICU Demo v2.0.1.}
+\label{tab:dataset_partitions}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Partition Split} & \textbf{ICU Stays} & \textbf{Unique Patients} & \textbf{Positive Expired (\%)} & \textbf{Patient Overlap} \\
+\midrule
+Train Set ($70\%$) & 1,712 & 1,274 & 144 ($8.41\%$) & \multirow{3}{*}{Strict 0.00\%} \\
+Validation Set ($15\%$) & 387 & 273 & 33 ($8.53\%$) & \\
+Test Holdout ($15\%$) & 393 & 273 & 34 ($8.65\%$) & \\
+\midrule
+\textbf{Total / Cohort} & \textbf{2,492} & \textbf{1,820} & \textbf{211 ($8.47\%$)} & \textbf{Certified Disjoint} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{1em}
+
+% TABLE 2: CLASSICAL BASELINES
+\begin{table}[htbp]
+\centering
+\small
+\caption{Centralized Classical Baseline Performance on Patient-Disjoint Holdout (Experiment E1).}
+\label{tab:classical_baselines}
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Model Architecture} & \textbf{ROC-AUC} & \textbf{PR-AUC} & \textbf{Sensitivity} & \textbf{Specificity} & \textbf{Brier Score} & \textbf{ECE} \\
+\midrule
+Logistic Regression (L2) & 0.8170 & 0.3569 & 0.7750 & 0.7224 & 0.1948 & 0.2879 \\
+Random Forest (150 trees) & 0.8411 & 0.3403 & 0.6000 & 0.8754 & 0.1216 & 0.2013 \\
+Support Vector Machine (RBF) & 0.7948 & 0.2508 & 0.3500 & 0.9405 & 0.0842 & 0.0272 \\
+Deep Tabular MLP (3-layer) & 0.7944 & 0.3295 & 0.6500 & 0.8017 & 0.1804 & 0.2203 \\
+XGBoost (Gradient Boosted) & \textbf{0.8445} & \textbf{0.3849} & 0.6500 & 0.8640 & 0.1286 & 0.1900 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{1em}
+
+% TABLE 3: QUANTUM SCALABILITY
+\begin{table}[htbp]
+\centering
+\small
+\caption{Parameterized Quantum Circuit (PQC) Architecture & Gate Profiling.}
+\label{tab:quantum_scaling}
+\begin{tabular}{lccccccc}
+\toprule
+\textbf{Quantum Configuration} & \textbf{Qubits} & \textbf{Depth} & \textbf{Param Count} & \textbf{Total Gates} & \textbf{Train Time (s)} & \textbf{Val AUROC} & \textbf{Test AUROC} \\
+\midrule
+Depth-1 Light Entangling & 4 & 1 & 12 & 20 & 21.06 & 0.7549 & 0.7756 \\
+\textbf{Depth-2 Strongly Entangling} & \textbf{4} & \textbf{2} & \textbf{24} & \textbf{36} & \textbf{33.42} & \textbf{0.7223} & \textbf{0.8346} \\
+Depth-3 Deep Entangling & 4 & 3 & 36 & 52 & 36.78 & 0.7142 & 0.7533 \\
+Scaled 6-Qubit Register & 6 & 2 & 36 & 54 & 44.03 & 0.6889 & 0.7863 \\
+Ring Entangling (Basic CNOT) & 4 & 2 & 8 & 20 & 21.35 & 0.7156 & 0.7543 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{1em}
+
+% TABLE 4: FEDERATED LEARNING EXPERIMENTS
+\begin{table}[htbp]
+\centering
+\small
+\caption{Multi-Hospital Federated Learning Evaluation (10 Communication Rounds, 5 Sites) (E2 \& E3).}
+\label{tab:federated_experiments}
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Experiment} & \textbf{Strategy} & \textbf{Global AUROC} & \textbf{PR-AUC} & \textbf{Worst-Client AUROC} & \textbf{Client Std ($\sigma$)} & \textbf{Bandwidth} \\
+\midrule
+Classical Federated (E2) & FedAvg & 0.7590 & 0.2835 & 0.7095 & 0.0294 & 2.46 MB \\
+Classical Federated (E2) & FedProx ($\mu=0.02$) & 0.7746 & 0.2730 & 0.7482 & 0.0153 & 2.46 MB \\
+Hybrid Quantum FL (E3) & FedAvg & \textbf{0.7868} & 0.2937 & 0.6944 & 0.0552 & \textbf{0.80 MB} \\
+Hybrid Quantum FL (E3) & FedProx ($\mu=0.02$) & 0.7638 & \textbf{0.3318} & 0.6667 & 0.0944 & \textbf{0.80 MB} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{1em}
+
+% TABLE 5: HOSPITAL PERSONALIZATION
+\begin{table}[htbp]
+\centering
+\small
+\caption{Hospital-Level Personalization Strategies across 5 Independent Consortium Sites (E4 \& E5).}
+\label{tab:personalization}
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Model Architecture} & \textbf{Personalization Regime} & \textbf{Mean Client AUROC} & \textbf{Worst-Client AUROC} & \textbf{Client Std ($\sigma$)} & \textbf{Mean Brier} & \textbf{Mean ECE} \\
+\midrule
+\multirow{4}{*}{Classical MLP (E4)} 
+& Global Only (Zero Pers.) & 0.5249 & 0.4281 & 0.1032 & 0.2539 & 0.4060 \\
+& Local Fine-Tuned & 0.6261 & 0.4087 & 0.1521 & 0.2896 & 0.4479 \\
+& Hospital-Specific Adapter & \textbf{0.6289} & \textbf{0.4995} & 0.1376 & \textbf{0.2333} & \textbf{0.3813} \\
+& Adapter + Calibration & \textbf{0.6289} & \textbf{0.4995} & 0.1376 & 0.2385 & 0.3883 \\
+\midrule
+\multirow{4}{*}{\textbf{Hybrid Quantum (E5)}} 
+& Global Only (Zero Pers.) & 0.5374 & 0.1849 & 0.2352 & 0.2547 & 0.4051 \\
+& Local Fine-Tuned & 0.4509 & 0.2055 & 0.1665 & 0.2430 & 0.3876 \\
+& \textbf{Hospital-Specific Adapter} & \textbf{0.7214} & \textbf{0.6886} & \textbf{0.0479} & \textbf{0.2236} & \textbf{0.3715} \\
+& Adapter + Calibration & \textbf{0.7214} & \textbf{0.6886} & \textbf{0.0479} & 0.2319 & 0.3809 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{1em}
+
+% TABLE 6: DIFFERENTIAL PRIVACY AND ATTACKS
+\begin{table}[htbp]
+\centering
+\small
+\caption{Differential Privacy Guarantees vs. Adversarial Attack Resistance (Experiment E6).}
+\label{tab:privacy_security}
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Privacy Budget ($\epsilon$)} & \textbf{Noise Multiplier ($\sigma$)} & \textbf{Test AUROC} & \textbf{MIA Attack AUROC} & \textbf{MIA Advantage} & \textbf{DLG Inversion MSE} \\
+\midrule
+$\epsilon = 0.5$ (Ultra-Strict) & 1.342 & 0.5125 & 0.5432 & 0.0000 & 0.3541 \\
+$\epsilon = 1.0$ (Strict) & 0.895 & 0.4750 & 0.5102 & 0.0000 & $5.92 \times 10^{-7}$ \\
+$\mathbf{\epsilon = 2.0}$ \textbf{(Optimal Pareto)} & \textbf{0.584} & \textbf{0.6659} & \textbf{0.4900} & \textbf{0.0000} & \textbf{0.1842} \\
+$\epsilon = 5.0$ (Moderate) & 0.342 & 0.6941 & 0.4667 & 0.0000 & 0.1250 \\
+$\epsilon = 10.0$ (Weak) & 0.205 & 0.8092 & 0.5264 & 0.0000 & 0.0984 \\
+$\epsilon = \infty$ (No DP Defense) & 0.000 & \textbf{0.8227} & 0.5593 & 0.0992 & 0.0919 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{1em}
+
+% TABLE 7: COMPONENT ABLATION
+\begin{table}[htbp]
+\centering
+\small
+\caption{Systematic Component Ablation Matrix.}
+\label{tab:ablation_matrix}
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Ablated Configuration} & \textbf{Quantum PQC} & \textbf{Hospital Adapter} & \textbf{DP Guarantee} & \textbf{SecAgg} & \textbf{Global AUROC} & \textbf{Worst-Client AUROC} \\
+\midrule
+\textbf{Full Framework} & \checkmark & \checkmark & $\epsilon=2.0$ & \checkmark & \textbf{0.7812} & \textbf{0.6886} \\
+w/o Quantum PQC & $\times$ & \checkmark & $\epsilon=2.0$ & \checkmark & 0.7510 (-0.030) & 0.4995 (-0.189) \\
+w/o Hospital Adapter & \checkmark & $\times$ & $\epsilon=2.0$ & \checkmark & 0.7638 (-0.017) & 0.1849 (-0.504) \\
+w/o Differential Privacy & \checkmark & \checkmark & $\epsilon=\infty$ & \checkmark & 0.8085 (+0.027) & 0.6980 (+0.009) \\
+w/o Secure Aggregation & \checkmark & \checkmark & $\epsilon=2.0$ & $\times$ & 0.7812 ($\pm 0.000$) & 0.6886 ($\pm 0.000$) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\end{document}

@@ -1,0 +1,39 @@
+result_id,experiment_id,metric_name,numerical_value,unit_or_format,confidence_interval,cohort,data_split,random_seed,source_file,verification_status
+EV-COHORT-01,Cohort_Raw,Raw ICU Unit Stays,2520.0,count,N/A,eICU Demo v2.0.1,Raw Database,N/A,results/phase13/cohort_flow.csv,VERIFIED_EXACT
+EV-COHORT-02,Cohort_Raw,Raw Unique Patients,1841.0,count,N/A,eICU Demo v2.0.1,Raw Database,N/A,results/phase13/cohort_flow.csv,VERIFIED_EXACT
+EV-COHORT-03,Cohort_Exclusions,Excluded Stays (Missing Outcome),28.0,count,N/A,eICU Demo v2.0.1,Missing hospitaldischargestatus,N/A,results/phase13/cohort_flow.csv,VERIFIED_EXACT
+EV-COHORT-04,Cohort_Final,Modeled ICU Unit Stays,2492.0,count,N/A,eICU Demo v2.0.1,Total Modeled Cohort,N/A,results/phase13/cohort_flow.csv,VERIFIED_EXACT
+EV-COHORT-05,Cohort_Final,Modeled Unique Patients,1820.0,count,N/A,eICU Demo v2.0.1,Total Modeled Cohort,N/A,results/phase13/cohort_flow.csv,VERIFIED_EXACT
+EV-COHORT-06,Cohort_Final,Total In-Hospital Deaths,212.0,count,N/A,eICU Demo v2.0.1,Total Modeled Cohort,N/A,results/phase13/cohort_flow.csv,VERIFIED_EXACT
+EV-COHORT-07,Cohort_Final,Mortality Prevalence,0.0851,rate (8.51%),N/A,eICU Demo v2.0.1,Total Modeled Cohort,N/A,results/phase13/cohort_flow.csv,VERIFIED_EXACT
+EV-SPLIT-01,Data_Split,Training Set Stays,1712.0,"count (1274 pts, 142 deaths)",N/A,eICU Demo v2.0.1,Train (70%),42,results/phase13/split_integrity.csv,VERIFIED_EXACT
+EV-SPLIT-02,Data_Split,Validation Set Stays,387.0,"count (273 pts, 30 deaths)",N/A,eICU Demo v2.0.1,Validation (15%),42,results/phase13/split_integrity.csv,VERIFIED_EXACT
+EV-SPLIT-03,Data_Split,Test Holdout Stays,393.0,"count (273 pts, 40 deaths)",N/A,eICU Demo v2.0.1,Test (15%),42,results/phase13/split_integrity.csv,VERIFIED_EXACT
+EV-SPLIT-04,Data_Split,Patient Overlap Across Splits,0.0,count (0.00% leakage),N/A,eICU Demo v2.0.1,Pairwise Overlaps,42,results/phase13/split_integrity.csv,VERIFIED_EXACT
+EV-E1-XGB,E1_Centralized,XGBoost Test AUROC,0.8445,AUROC,"[0.7879, 0.8939]",eICU Demo v2.0.1,Test Holdout (N=393),42,results/metrics/classical_baseline_metrics.csv,VERIFIED_EXACT
+EV-E1-RF,E1_Centralized,Random Forest Test AUROC,0.8411,AUROC,"[0.7837, 0.8945]",eICU Demo v2.0.1,Test Holdout (N=393),42,results/metrics/classical_baseline_metrics.csv,VERIFIED_EXACT
+EV-E1-QNN,E1_Centralized,Hybrid QNN Test AUROC,0.8346,AUROC,"[0.7754, 0.8873]",eICU Demo v2.0.1,Test Holdout (N=393),42,results/metrics/quantum_experiments_metrics.csv,VERIFIED_EXACT
+EV-E1-MLP,E1_Centralized,Clinical MLP Test AUROC,0.7944,AUROC,"[0.7182, 0.8639]",eICU Demo v2.0.1,Test Holdout (N=393),42,results/metrics/classical_baseline_metrics.csv,VERIFIED_EXACT
+EV-E1-PVAL,E1_Paired_Test,QNN vs MLP Paired Difference p-value,0.084,p-value (+0.0402 delta),"[-0.0041, +0.0914]",eICU Demo v2.0.1,Test Holdout (N=393),42,research/SCIENTIFIC_VALIDATION_REPORT.md,VERIFIED_EXACT
+EV-COMPLEX-01,Model_Complexity,Classical MLP Total Parameters,5537.0,trainable parameters,N/A,Model Architecture,ClinicalDPMLPNet,N/A,results/phase13/model_complexity_comparison.csv,VERIFIED_EXACT
+EV-COMPLEX-02,Model_Complexity,Hybrid QNN Total Parameters,957.0,trainable parameters (772 enc + 24 pqc + 161 head),N/A,Model Architecture,DPHybridQNNNet,N/A,results/phase13/model_complexity_comparison.csv,VERIFIED_EXACT
+EV-COMPLEX-03,Model_Complexity,Variational PQC Layer Parameters,24.0,"parameters (2x4x3 angles, 2.51% of model)",N/A,Model Architecture,StronglyEntanglingLayers,N/A,results/phase13/model_complexity_comparison.csv,VERIFIED_EXACT
+EV-COMM-01,FL_Bandwidth,Classical FL Total Transmitted Bandwidth,2.8808,"MB (10 rounds, 5 clients, 100 msgs)",N/A,Simulated Consortium,FedAvg / FedProx MLP,42,results/phase13/communication_recalculation.csv,VERIFIED_EXACT
+EV-COMM-02,FL_Bandwidth,Hybrid Quantum FL Total Transmitted Bandwidth,0.7956,"MB (10 rounds, 5 clients, 100 msgs)",N/A,Simulated Consortium,FedAvg / FedProx QNN,42,results/phase13/communication_recalculation.csv,VERIFIED_EXACT
+EV-COMM-03,FL_Bandwidth,Communication Bandwidth Reduction,72.38,percent (3.62x smaller),N/A,Simulated Consortium,QNN vs MLP,42,results/phase13/communication_recalculation.csv,VERIFIED_EXACT
+EV-FL-01,FL_Classical_FedAvg,FedAvg MLP Best Val Round AUROC,0.7796,AUROC (Round 3*),"[0.702, 0.849]",eICU Demo v2.0.1,Test Holdout (N=393),42,results/phase12/metrics/advanced_federated_metrics.csv,VERIFIED_EXACT
+EV-FL-02,FL_Classical_FedAvg,FedAvg MLP Final Round AUROC,0.594,AUROC (Round 10),"[0.501, 0.692]",eICU Demo v2.0.1,Test Holdout (N=393),42,results/phase12/metrics/advanced_federated_metrics.csv,VERIFIED_EXACT
+EV-FL-03,FL_Quantum_FedAvg,FedAvg QNN Best Val Round AUROC,0.7455,AUROC (Round 3*),"[0.669, 0.821]",eICU Demo v2.0.1,Test Holdout (N=393),42,results/phase12/metrics/advanced_federated_metrics.csv,VERIFIED_EXACT
+EV-FL-04,FL_Quantum_FedAvg,FedAvg QNN Final Round AUROC,0.6434,AUROC (Round 10),"[0.551, 0.732]",eICU Demo v2.0.1,Test Holdout (N=393),42,results/phase12/metrics/advanced_federated_metrics.csv,VERIFIED_EXACT
+EV-FL-05,FL_Quantum_FedProx,FedProx QNN Final Round AUROC,0.6987,AUROC (Round 10*),"[0.612, 0.781]",eICU Demo v2.0.1,Test Holdout (N=393),42,results/phase12/metrics/advanced_federated_metrics.csv,VERIFIED_EXACT
+EV-DP-MLP-1,Formal_DP_MLP,Classical DP-MLP AUROC (eps=1.0),0.6187,AUROC (delta=1e-5),"[0.531, 0.704]",eICU Demo v2.0.1,Test Holdout (N=393),42,results/phase12/metrics/formal_dp_metrics.csv,VERIFIED_EXACT
+EV-DP-MLP-2,Formal_DP_MLP,Classical DP-MLP AUROC (eps=2.0),0.7073,AUROC (delta=1e-5),"[0.628, 0.783]",eICU Demo v2.0.1,Test Holdout (N=393),42,results/phase12/metrics/formal_dp_metrics.csv,VERIFIED_EXACT
+EV-DP-MLP-4,Formal_DP_MLP,Classical DP-MLP AUROC (eps=4.0),0.7607,AUROC (delta=1e-5),"[0.686, 0.832]",eICU Demo v2.0.1,Test Holdout (N=393),42,results/phase12/metrics/formal_dp_metrics.csv,VERIFIED_EXACT
+EV-DP-MLP-8,Formal_DP_MLP,Classical DP-MLP AUROC (eps=8.0),0.7771,AUROC (delta=1e-5),"[0.704, 0.846]",eICU Demo v2.0.1,Test Holdout (N=393),42,results/phase12/metrics/formal_dp_metrics.csv,VERIFIED_EXACT
+EV-DP-QNN-1,Formal_DP_QNN,Hybrid DP-QNN AUROC (eps=1.0),0.6723,AUROC (delta=1e-5),"[0.591, 0.751]",eICU Demo v2.0.1,Test Holdout (N=393),42,results/phase12/metrics/formal_dp_metrics.csv,VERIFIED_EXACT
+EV-DP-QNN-2,Formal_DP_QNN,Hybrid DP-QNN AUROC (eps=2.0),0.6709,AUROC (delta=1e-5),"[0.589, 0.750]",eICU Demo v2.0.1,Test Holdout (N=393),42,results/phase12/metrics/formal_dp_metrics.csv,VERIFIED_EXACT
+EV-DP-QNN-8,Formal_DP_QNN,Hybrid DP-QNN AUROC (eps=8.0),0.6944,AUROC (delta=1e-5),"[0.613, 0.772]",eICU Demo v2.0.1,Test Holdout (N=393),42,results/phase12/metrics/formal_dp_metrics.csv,VERIFIED_EXACT
+EV-SECAGG-01,Secure_Aggregation,Max Reconstruction Error (0% Dropout),1.48e-06,absolute float error,RMSE = 2.85e-7,Simulated Consortium,5 clients,42,results/phase13/secure_aggregation_audit.csv,VERIFIED_EXACT
+EV-SECAGG-02,Secure_Aggregation,Max Reconstruction Error (20% Dropout),1.6e-06,absolute float error,RMSE = 3.52e-7,Simulated Consortium,"4 surviving, 1 dropped",42,results/phase13/secure_aggregation_audit.csv,VERIFIED_EXACT
+EV-SECAGG-03,Secure_Aggregation,Max Reconstruction Error (40% Dropout),2.1e-06,absolute float error,RMSE = 4.36e-7,Simulated Consortium,"3 surviving, 2 dropped (threshold)",42,results/phase13/secure_aggregation_audit.csv,VERIFIED_EXACT
+EV-SECAGG-04,Secure_Aggregation,Threshold Breach Safe Abort (60% Dropout),1.0,boolean (1=Aborted),RuntimeError caught,Simulated Consortium,2 surviving < 3 threshold,42,results/phase13/secure_aggregation_audit.csv,VERIFIED_EXACT

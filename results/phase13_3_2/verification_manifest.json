@@ -1,0 +1,49 @@
+{
+  "phase": "13.3.2",
+  "title": "FINAL COHORT INTEGRITY, TEST-SET REPRODUCIBILITY AND CLINICAL METRIC AUDIT",
+  "dataset": {
+    "name": "eICU-CRD Landmark Cohort",
+    "prediction_landmark_minutes": 1440,
+    "total_stays": 1607,
+    "unique_patients": 1317,
+    "total_deaths": 141,
+    "overall_mortality_prevalence": 0.087741,
+    "train_stays": 1132,
+    "train_patients": 921,
+    "train_deaths": 89,
+    "train_mortality_prevalence": 0.078622,
+    "val_stays": 234,
+    "val_patients": 198,
+    "val_deaths": 24,
+    "val_mortality_prevalence": 0.102564,
+    "test_stays": 241,
+    "test_patients": 198,
+    "test_deaths": 28,
+    "test_mortality_prevalence": 0.116183,
+    "feature_count": 41,
+    "patient_disjointness_verified": true,
+    "patient_overlap_cross_splits": 0,
+    "leakage_verified": false
+  },
+  "evaluation": {
+    "default_threshold": 0.5,
+    "qnn_inf_auroc": 0.7658,
+    "qnn_inf_auprc": 0.2957,
+    "qnn_inf_f1_default": 0.0,
+    "qnn_inf_max_prob": 0.136655,
+    "qnn_inf_val_locked_threshold": 0.006521,
+    "qnn_inf_sens_at_val_tau": 0.75,
+    "qnn_inf_spec_at_val_tau": 0.6479,
+    "qnn_inf_f1_at_val_tau": 0.3387,
+    "qnn_inf_sens_at_spec80": 0.6429,
+    "qnn_inf_spec_at_sens80": 0.5258,
+    "qnn_inf_brier": 0.1106,
+    "qnn_inf_ece": 0.1027
+  },
+  "unit_tests": {
+    "total": 70,
+    "passed": 70,
+    "failed": 0
+  },
+  "files": {}
+}

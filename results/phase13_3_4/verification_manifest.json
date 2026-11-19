@@ -1,0 +1,75 @@
+{
+  "phase": "13.3.4",
+  "title": "Final Statistical Audit, Calibration Validation and Decision-Curve Correction",
+  "cohort": {
+    "train_encounters": 1132,
+    "train_deaths": 89,
+    "train_prevalence": 0.07862190812720848,
+    "val_encounters": 234,
+    "val_deaths": 24,
+    "val_prevalence": 0.10256410256410256,
+    "test_encounters": 241,
+    "test_deaths": 28,
+    "test_prevalence": 0.11618257261410789,
+    "test_unique_patients": 198
+  },
+  "baselines_brier_test": {
+    "training_prevalence_baseline": 0.10409498595157288,
+    "validation_prevalence_baseline": 0.10286964516137832,
+    "oracle_test_prevalence_reference": 0.10268418243487545,
+    "qnn_inf_raw": 0.110555,
+    "mlp_inf_raw": 0.162129,
+    "qnn_inf_platt": 0.09796,
+    "mlp_inf_platt": 0.096438
+  },
+  "decision_curve_crossover": {
+    "pt_0.08_tie": {
+      "Treat_All": 0.039329,
+      "QNN_Platt": 0.039329,
+      "MLP_Platt": 0.03898
+    },
+    "crossover_threshold": 0.09,
+    "clinical_benefit_window": "[0.09, 0.25]"
+  },
+  "paired_bootstrap_tests_qnn_minus_mlp_inf": {
+    "delta_auroc": {
+      "mean": 0.0494,
+      "ci_95": [
+        -0.0409,
+        0.1393
+      ],
+      "p_value": 0.29
+    },
+    "delta_auprc": {
+      "mean": 0.0244,
+      "ci_95": [
+        -0.0843,
+        0.1256
+      ],
+      "p_value": 0.624
+    },
+    "delta_brier_platt": {
+      "mean": 0.0015,
+      "ci_95": [
+        -0.0042,
+        0.0082
+      ],
+      "p_value": 0.629
+    }
+  },
+  "quantum_advantage_conclusion": "The hybrid quantum-classical model demonstrates computational feasibility and competitive predictive performance in this experimental setting. The current evaluation does not establish statistically significant superiority or quantum advantage over the classical baseline.",
+  "checksums_sha256": {
+    "prevalence_baseline_comparison.csv": "231f13c5a2df06875f55267f40cf981efc10280fd3be311a672864e05a79de98",
+    "calibration_curve_bins.csv": "218c07b5c0e0150a809af57f6a36b193bc5e2d7462998bb71415f97b984744b7",
+    "platt_scaling_stability.csv": "90d334547d824e1e16cc97e2db407475e5ba2e2d4bf873c6be685db8dbd3716f",
+    "bootstrap_metric_cis.csv": "dd92e41be4131845db36135dd2d089108320a97f96ea28b04f995fe484f9a758",
+    "bootstrap_paired_metrics.csv": "849d9bc5565fdba2418aee9beddcf09d7314579b94747fabce0312bd79077646",
+    "decision_curve_analysis_corrected.csv": "ffe2950b97b56536dba4721688a083910d5139e4c1891b027b41f5b27f285efd",
+    "clinical_operating_points.csv": "6998ea00442d77270a293a295c6a2a6012e82e534ff224bc9f38238a6ddc75a5",
+    "reliability_curves_with_baselines.png": "06aa6c89d970790eddc3db740902cda9e5d588b42662695971423a4f29a9cef8",
+    "decision_curve_analysis_corrected.png": "44ee5cd4bef488c1f8e077da79c95f50a3aa75d09beaf7bd6ee380f110fe15d1",
+    "bootstrap_paired_differences.png": "35f0cf7e274003dde2598755f35717f7e54f18ba7a3c53b3c21a445127147322",
+    "roc_prc_comparison.png": "d96be76c55522c1c5d05cb3043eb56305fafa3682194705418890cab461452eb",
+    "platt_validation_stability.png": "26df2bffd4c9c3c5de1d1afe9548ba2089ed1434e20b2b0aba5b8b8a9f171e20"
+  }
+}

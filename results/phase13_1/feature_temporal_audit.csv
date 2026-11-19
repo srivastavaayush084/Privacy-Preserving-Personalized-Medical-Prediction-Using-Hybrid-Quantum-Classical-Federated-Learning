@@ -1,0 +1,13 @@
+Feature,Domain,Timing,Status,Leaking_Post_Landmark
+"age, gender, ethnicity",Demographics,Recorded at hospital/ICU admission (t <= 0),Valid at landmark,False
+"unittype, region",Administrative / Setting,Known at ICU bed placement (t = 0),Valid at landmark,False
+"bmi (admissionheight, admissionweight)",Anthropometrics,Recorded upon admission (t <= 60 min),Valid at landmark,False
+"comorbidity_burden (aids, cirrhosis, etc.)",Past Medical History,Pre-existing prior to ICU admission,Valid at landmark,False
+"organ_support_count (intubated, vent, dialysis)",Organ Support,"First 24 hours of ICU stay ([0, 1440] min)",Valid at landmark,False
+"heartrate, meanbp, respiratoryrate, temperature",Acute Vitals (APACHE IV APS),"Worst physiological values in first 24h ([0, 1440] min)",Valid at landmark,False
+"creatinine, bun, sodium, wbc, hematocrit, glucose",Acute Routine Labs (APACHE IV APS),"Worst laboratory values in first 24h ([0, 1440] min)",Valid at landmark,False
+"ph, pao2, bilirubin, albumin (and missingness flags)",Invasive Blood Gas & Hepatic Labs,"Worst laboratory values in first 24h ([0, 1440] min)",Valid at landmark,False
+"gcs_total (eyes, motor, verbal)",Neurological Assessment,"Worst GCS assessment during first 24h ([0, 1440] min)",Valid at landmark,False
+"shock_index, bun_to_creatinine",Physiological Ratios,Derived strictly from first 24h vitals and labs,Valid at landmark,False
+"unitdischargestatus, unitdischargeoffset",ICU Discharge,ICU discharge event,Excluded from feature matrix (used only for cohort gating),False
+"hospitaldischargestatus, hospitaldischargeoffset",Hospital Outcome,Hospital discharge event (t >= 1487 min),Target variable y (Excluded from predictor matrix X),False

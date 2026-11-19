@@ -1,0 +1,13 @@
+table_name,total_rows,exact_duplicate_rows,exact_duplicate_pct,id_level_check
+patient,2520,0,0.0,patientunitstayid duplicates: 0
+hospital,186,0,0.0,N/A
+apachePatientResult,3676,0,0.0,unique stays: 1838 / 3676 rows
+apacheApsVar,2205,0,0.0,unique stays: 2205 / 2205 rows
+apachePredVar,2205,0,0.0,unique stays: 2205 / 2205 rows
+admissionDx,7578,0,0.0,unique stays: 2221 / 7578 rows
+diagnosis,24978,0,0.0,unique stays: 2155 / 24978 rows
+lab,434660,0,0.0,unique stays: 2444 / 434660 rows
+vitalPeriodic,1634960,0,0.0,unique stays: 2375 / 1634960 rows
+vitalAperiodic,274088,0,0.0,unique stays: 2331 / 274088 rows
+medication,75604,0,0.0,unique stays: 1857 / 75604 rows
+treatment,38290,0,0.0,unique stays: 1910 / 38290 rows

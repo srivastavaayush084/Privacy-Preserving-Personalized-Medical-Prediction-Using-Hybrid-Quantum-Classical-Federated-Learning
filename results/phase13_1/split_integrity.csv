@@ -1,0 +1,5 @@
+Partition,Encounter_Count,Unique_Patients,Deaths,Survivors,Prevalence,Patient_Overlap_With_Other_Splits
+Train,1132,921,89,1043,0.07862190812720848,0
+Validation,234,198,24,210,0.10256410256410256,0
+Test,241,198,28,213,0.11618257261410789,0
+Total,1607,1317,141,1466,0.08774113254511512,0

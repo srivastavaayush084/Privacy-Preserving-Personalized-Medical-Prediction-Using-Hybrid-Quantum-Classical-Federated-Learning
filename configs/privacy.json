@@ -1,0 +1,28 @@
+{
+  "differential_privacy": {
+    "enabled": true,
+    "target_epsilon": 5.0,
+    "target_delta": 1e-4,
+    "max_grad_norm": 1.0,
+    "noise_multiplier": 0.8,
+    "accountant": "rdp",
+    "privacy_unit": "record_level"
+  },
+  "secure_aggregation": {
+    "enabled": true,
+    "protocol": "shamir_masking_pairwise",
+    "min_cohort_size": 3,
+    "dropout_tolerance": 0.33
+  },
+  "attack_evaluation": {
+    "membership_inference": {
+      "shadow_models": 3,
+      "attack_type": "threshold_entropy"
+    },
+    "gradient_inversion": {
+      "iterations": 300,
+      "optimizer": "lbfgs"
+    }
+  }
+}
+

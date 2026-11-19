@@ -1,0 +1,8 @@
+metric,train,val,test,total,integrity_check
+Total ICU Stays,1712,387,393,2492,Sum equals total processed cohort
+Unique Patients (uniquepid),1274,273,273,1820,Patient counts strictly additive
+Expired (Mortality Positive),142,30,40,212,Positive counts strictly additive
+Alive (Mortality Negative),1570,357,353,2280,Negative counts strictly additive
+Mortality Prevalence,8.2944%,7.7519%,10.1781%,8.5072%,Consistent prevalence across partitions
+Patient Pairwise Overlap,Train/Val: 0,Train/Test: 0,Val/Test: 0,0 (Strictly Disjoint),Zero patient leakage verified
+Unique Hospitals Represented,186,146,156,186,Inter-hospital representation verified

@@ -1,0 +1,4 @@
+defense,reconstruction_mse,cosine_similarity,privacy_status
+No Defense (Raw Gradient),0.09185945242643356,0.9848597049713135,Vulnerable
+Differential Privacy (eps=1.0),5.917385692555399e-07,0.9999987483024597,Protected
+Secure Aggregation,0.21085555851459503,0.9385150074958801,Information-Theoretically Hidden

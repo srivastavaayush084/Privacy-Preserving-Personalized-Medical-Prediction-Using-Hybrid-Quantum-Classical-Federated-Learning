@@ -1,0 +1,6 @@
+Experiment,Num_Qubits,Circuit_Depth,Entanglement,Trainable_Params,Total_Gates,Single_Qubit_Rotations,Two_Qubit_Entanglers,Train_Time_Sec,Inference_Time_Sec,Val_AUROC,Val_PRAUC,Test_AUROC,Test_PRAUC,Test_Accuracy,Test_F1,Test_Sensitivity,Test_Specificity,Test_Brier,Test_ECE
+Hybrid QNN (4-Qubit Depth-2 Strong),4,2,strongly_entangling,24,36,24,8,33.42,0.1523,0.7223,0.244,0.8346,0.3311,0.8193,0.432,0.675,0.8357,0.1395,0.1484
+Hybrid QNN (4-Qubit Depth-1 Light),4,1,strongly_entangling,12,20,12,4,21.06,0.0877,0.7549,0.2249,0.7756,0.2193,0.6768,0.3487,0.85,0.6572,0.2101,0.241
+Hybrid QNN (4-Qubit Depth-3 Deep),4,3,strongly_entangling,36,52,36,12,36.78,0.1659,0.7142,0.2253,0.7533,0.2947,0.7379,0.3179,0.6,0.7535,0.1726,0.2019
+Hybrid QNN (6-Qubit Scaled Register),6,2,strongly_entangling,36,54,36,12,44.03,0.2192,0.6889,0.1964,0.7863,0.2844,0.7252,0.3571,0.75,0.7224,0.1877,0.2231
+Hybrid QNN (4-Qubit Ring Entangling),4,2,basic_ring,8,20,8,8,21.35,0.105,0.7156,0.2642,0.7543,0.2746,0.715,0.3086,0.625,0.7252,0.1911,0.2215

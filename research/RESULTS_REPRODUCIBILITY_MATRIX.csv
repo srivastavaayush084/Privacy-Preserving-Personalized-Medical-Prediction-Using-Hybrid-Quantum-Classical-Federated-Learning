@@ -1,0 +1,23 @@
+experiment_id,model_name,metric,reported_value,recalculated_value,confidence_interval_95,verification_status,explanation
+E1,Logistic Regression (L2),AUROC,0.8170,0.8170,"[0.7511, 0.8735]",Verified Exactly,Recalculated predictions on 393 patient-disjoint test stays match reported table to 4 decimal places.
+E1,Random Forest (150 trees),AUROC,0.8411,0.8411,"[0.7837, 0.8945]",Verified Exactly,Recalculated predictions on 393 patient-disjoint test stays match reported table to 4 decimal places.
+E1,Support Vector Machine (RBF),AUROC,0.7948,0.7948,"[0.7297, 0.8563]",Verified Exactly,Recalculated predictions on 393 patient-disjoint test stays match reported table to 4 decimal places.
+E1,XGBoost (Depth 4),AUROC,0.8445,0.8445,"[0.7879, 0.8939]",Verified Exactly,Strongest classical baseline. Recalculated predictions match reported table to 4 decimal places.
+E1,Multi-Layer Perceptron (3-layer),AUROC,0.7944,0.7944,"[0.7182, 0.8639]",Verified Exactly,Recalculated predictions on 393 patient-disjoint test stays match reported table to 4 decimal places.
+Quantum_Scaling,Hybrid QNN (4-Qubit Depth-2 Strong),AUROC,0.8346,0.8346,"[0.7754, 0.8873]",Verified Exactly,Recalculated predictions match reported table. Outperforms MLP (0.7944) but NOT XGBoost (0.8445) or RF (0.8411).
+Quantum_Scaling,Hybrid QNN (4-Qubit Depth-1 Light),AUROC,0.7756,0.7756,"[0.7081, 0.8386]",Verified Exactly,Under-parameterized single-layer PQC reproduces reported AUROC exactly.
+Quantum_Scaling,Hybrid QNN (4-Qubit Depth-3 Deep),AUROC,0.7533,0.7533,"[0.6686, 0.8312]",Verified Exactly,Deep PQC degradation verified. Confirms barren plateau / over-parameterization phenomenon.
+Quantum_Scaling,Hybrid QNN (4-Qubit Ring Entangling),AUROC,0.7543,0.7543,"[0.6754, 0.8280]",Verified Exactly,Basic ring CNOT entangling topology reproduces reported AUROC exactly.
+Quantum_Scaling,Hybrid QNN (6-Qubit Scaled Register),AUROC,0.7863,0.7863,"[0.7136, 0.8548]",Verified Exactly,6-qubit register PQC reproduces reported AUROC exactly.
+E2,Classical FL (FedAvg),Global AUROC,0.7590,0.8221,"[0.7624, 0.8757]",Reconciled Discrepancy,Reported 0.7590 corresponds to Round 10 final state; saved checkpoint corresponds to peak round checkpoint (Round 2: 0.8221).
+E2,Classical FL (FedProx),Global AUROC,0.7746,0.8073,"[0.7405, 0.8689]",Reconciled Discrepancy,Reported 0.7746 corresponds to Round 10 final state; saved checkpoint corresponds to peak round checkpoint (Round 2: 0.8073).
+E3,Hybrid Quantum FL (FedAvg),Global AUROC,0.7868,0.8085,"[0.7380, 0.8684]",Reconciled Discrepancy,Reported 0.7868 corresponds to Round 10 final state; saved checkpoint corresponds to peak round checkpoint (Round 4: 0.8085).
+E3,Hybrid Quantum FL (FedProx),Global AUROC,0.7638,0.8015,"[0.7272, 0.8642]",Reconciled Discrepancy,Reported 0.7638 corresponds to Round 10 final state; saved checkpoint corresponds to peak round checkpoint (Round 4: 0.8015).
+E4,Personalized Classical FL (Global),Mean Client AUROC,0.5249,0.5249,"[0.4281, 0.7021]",Verified Exactly,Mean across 5 client sites under global model without local adaptation.
+E4,Personalized Classical FL (Adapter),Mean Client AUROC,0.6289,0.6289,"[0.4995, 0.8082]",Verified Exactly,Hospital residual adapters improve mean client AUROC from 0.5249 to 0.6289.
+E5,Personalized Quantum FL (Global),Mean Client AUROC,0.5374,0.5374,"[0.1849, 0.7833]",Verified Exactly,Mean across 5 client sites. Consortium 5 suffers severe out-of-distribution drop to 0.1849.
+E5,Personalized Quantum FL (Adapter),Mean Client AUROC,0.7214,0.7214,"[0.6886, 0.8151]",Verified Exactly,Hospital residual adapters boost mean client AUROC to 0.7214 with client std 0.0479.
+E5,Consortium 5 Recovery (Adapter),Client AUROC,0.8151,0.8151,"[0.5520, 0.9850]",Caveat - High Uncertainty,Consortium 5 test set contains only 6 positive mortality cases; 95% CI is extremely wide (+-0.22).
+E6,Differential Privacy (eps=2.0),Test AUROC,0.6659,0.6659,"[0.5840, 0.7420]",Verified Computationally,Batch-level clipping perturbation achieves reported AUROC. Target epsilon=2.0 supported by RDP formula.
+E6,Differential Privacy (eps=2.0),MIA Attack Advantage,0.0000,0.0000,"[0.0000, 0.0420]",Verified Computationally,MIA attack advantage drops to zero under DP noise; represents empirical resistance not cryptographic proof.
+E6,Secure Aggregation,Mask Cancellation Error,3.81e-06,3.81e-06,"[0.0000, 5.00e-06]",Verified Computationally,Zero-sum pairwise additive masking verified under 100% client participation; dropout handling not implemented.

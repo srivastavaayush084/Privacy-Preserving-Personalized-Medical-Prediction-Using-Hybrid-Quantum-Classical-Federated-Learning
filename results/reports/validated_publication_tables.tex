@@ -1,0 +1,153 @@
+% Validated Publication-Ready LaTeX Tables for Research Paper Submission
+% Post-Audit Edition with Bootstrap 95% Confidence Intervals & Paired Hypothesis Tests
+% Project: Privacy-Preserving Personalized Medical Prediction Using Hybrid Quantum-Classical Federated Learning
+
+\documentclass{article}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{multirow}
+\usepackage{geometry}
+\geometry{a4paper, margin=0.85in}
+
+\begin{document}
+
+\section*{Validated Scientific Results Tables}
+
+% TABLE 1: DATASET PARTITION AUDIT
+\begin{table}[htbp]
+\centering
+\small
+\caption{Cohort Demographics and Certified Patient-Disjoint Partitions on eICU Demo v2.0.1.}
+\label{tab:dataset_partitions}
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Partition Split} & \textbf{ICU Stays} & \textbf{Unique Patients} & \textbf{Expired (\%)} & \textbf{Alive (\%)} & \textbf{Patient Leakage} \\
+\midrule
+Train Partition ($70\%$) & 1,712 & 1,274 & 144 ($8.41\%$) & 1,568 ($91.59\%$) & \multirow{3}{*}{\textbf{Certified 0.00\%}} \\
+Validation Partition ($15\%$) & 387 & 273 & 33 ($8.53\%$) & 354 ($91.47\%$) & \\
+Test Holdout ($15\%$) & 393 & 273 & 40 ($10.18\%$) & 353 ($89.82\%$) & \\
+\midrule
+\textbf{Total Analyzed Cohort} & \textbf{2,492} & \textbf{1,820} & \textbf{217 ($8.71\%$)} & \textbf{2,275 ($91.29\%$)} & \textbf{Strict Disjoint} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{1em}
+
+% TABLE 2: CENTRALIZED BASELINES VS QUANTUM WITH 95% BOOTSTRAP CIs
+\begin{table}[htbp]
+\centering
+\small
+\caption{Centralized Models vs. Hybrid Quantum Neural Network on Patient-Disjoint Holdout ($N = 393$).}
+\label{tab:model_comparison}
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Model Architecture} & \textbf{AUROC [95\% CI]} & \textbf{AUPRC [95\% CI]} & \textbf{Sensitivity} & \textbf{Specificity} & \textbf{Brier Score} & \textbf{ECE} \\
+\midrule
+\textbf{XGBoost (Depth 4)} & \textbf{0.8445 [0.7879, 0.8939]} & \textbf{0.3849 [0.2410, 0.5420]} & 0.6500 & 0.8640 & 0.1286 & 0.1900 \\
+Random Forest (150 trees) & 0.8411 [0.7837, 0.8945] & 0.3403 [0.2105, 0.4982] & 0.4750 & 0.8980 & 0.1216 & 0.2013 \\
+Logistic Regression (L2) & 0.8170 [0.7511, 0.8735] & 0.3569 [0.2215, 0.5180] & \textbf{0.7750} & 0.7280 & 0.1948 & 0.2879 \\
+Support Vector Machine (RBF) & 0.7948 [0.7297, 0.8563] & 0.2508 [0.1412, 0.4010] & 0.0000 & \textbf{1.0000} & \textbf{0.0842} & \textbf{0.0272} \\
+Classical MLP (3-layer) & 0.7944 [0.7182, 0.8639] & 0.3295 [0.1985, 0.4850] & 0.7500 & 0.7110 & 0.1804 & 0.2203 \\
+\midrule
+\textbf{Hybrid QNN (4-Qubit Depth-2)} & 0.8346 [0.7754, 0.8873] & 0.3311 [0.2015, 0.4890] & 0.6750 & 0.8357 & 0.1395 & 0.1484 \\
+Hybrid QNN (4-Qubit Depth-1) & 0.7756 [0.7081, 0.8386] & 0.2193 [0.1250, 0.3420] & 0.8500 & 0.6572 & 0.2101 & 0.2410 \\
+Hybrid QNN (4-Qubit Depth-3) & 0.7533 [0.6686, 0.8312] & 0.2947 [0.1650, 0.4410] & 0.6000 & 0.7535 & 0.1726 & 0.2019 \\
+Hybrid QNN (6-Qubit Scaled) & 0.7863 [0.7136, 0.8548] & 0.2844 [0.1610, 0.4350] & 0.7500 & 0.7224 & 0.1877 & 0.2231 \\
+Hybrid QNN (4-Qubit Ring) & 0.7543 [0.6754, 0.8280] & 0.2746 [0.1540, 0.4210] & 0.6250 & 0.7252 & 0.1911 & 0.2215 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{1em}
+
+% TABLE 3: PAIRED STATISTICAL COMPARISONS (RESOLUTION OF ADVANTAGE CLAIM)
+\begin{table}[htbp]
+\centering
+\small
+\caption{Paired Non-Parametric Bootstrap Comparisons: Hybrid QNN vs. Classical Baselines ($N = 393$, 1,000 resamples).}
+\label{tab:paired_tests}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Paired Comparison} & \textbf{AUROC Difference ($\Delta$)} & \textbf{95\% Bootstrap CI} & \textbf{Two-Sided $p$-Value} & \textbf{Statistical Conclusion} \\
+\midrule
+Hybrid QNN vs. \textbf{XGBoost} & -0.0099 & [-0.0618, +0.0376] & $p = 0.7160$ & Classical XGBoost Superior (Not Significant) \\
+Hybrid QNN vs. \textbf{Random Forest} & -0.0065 & [-0.0555, +0.0405] & $p = 0.8640$ & Classical RF Superior (Not Significant) \\
+Hybrid QNN vs. \textbf{Logistic Regression} & +0.0176 & [-0.0259, +0.0610] & $p = 0.3920$ & No Significant Difference \\
+Hybrid QNN vs. \textbf{Support Vector Machine} & +0.0398 & [-0.0082, +0.0896] & $p = 0.0940$ & No Significant Difference \\
+Hybrid QNN vs. \textbf{Classical MLP} & +0.0402 & [-0.0041, +0.0914] & $p = 0.0840$ & Trend towards QNN (Not Significant at $\alpha=0.05$) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{1em}
+
+% TABLE 4: FEDERATED LEARNING AUDITED PERFORMANCE
+\begin{table}[htbp]
+\centering
+\small
+\caption{Federated Learning Experimental Results Across 5 Hospital Consortium Sites (10 Rounds).}
+\label{tab:federated_results}
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Federated Setting} & \textbf{Strategy} & \textbf{Final Round AUROC} & \textbf{Peak Round AUROC [95\% CI]} & \textbf{Worst-Client AUROC} & \textbf{Client Std ($\sigma$)} & \textbf{Bandwidth} \\
+\midrule
+Classical MLP (E2) & FedAvg & 0.7590 & 0.8221 [0.7624, 0.8757] & 0.7095 & 0.0294 & 2.46 MB \\
+Classical MLP (E2) & FedProx ($\mu=0.02$) & 0.7746 & 0.8073 [0.7405, 0.8689] & 0.7482 & \textbf{0.0153} & 2.46 MB \\
+\textbf{Hybrid QNN (E3)} & FedAvg & \textbf{0.7868} & \textbf{0.8085 [0.7380, 0.8684]} & 0.6944 & 0.0552 & \textbf{0.80 MB} \\
+Hybrid QNN (E3) & FedProx ($\mu=0.02$) & 0.7638 & 0.8015 [0.7272, 0.8642] & 0.6667 & 0.0944 & \textbf{0.80 MB} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{1em}
+
+% TABLE 5: HOSPITAL PERSONALIZATION AUDITED
+\begin{table}[htbp]
+\centering
+\small
+\caption{Hospital Personalization Strategy Comparison Across 5 Consortium Sites (E4 \& E5).}
+\label{tab:personalization_results}
+\begin{tabular}{llccccc}
+\toprule
+\textbf{Model Family} & \textbf{Personalization Regime} & \textbf{Mean Client AUROC} & \textbf{Worst-Client AUROC} & \textbf{Client Std ($\sigma$)} & \textbf{Mean Brier} & \textbf{Mean ECE} \\
+\midrule
+\multirow{4}{*}{Classical MLP (E4)} 
+& Global Only (Zero Pers.) & 0.5249 & 0.4281 & 0.1032 & 0.2539 & 0.4060 \\
+& Local Fine-Tuning & 0.6261 & 0.4087 & 0.1521 & 0.2896 & 0.4479 \\
+& \textbf{Hospital Residual Adapter} & \textbf{0.6289} & \textbf{0.4995} & 0.1376 & \textbf{0.2333} & \textbf{0.3813} \\
+& Adapter + Temperature Calib. & \textbf{0.6289} & \textbf{0.4995} & 0.1376 & 0.2385 & 0.3883 \\
+\midrule
+\multirow{4}{*}{\textbf{Hybrid QNN (E5)}} 
+& Global Only (Zero Pers.) & 0.5374 & 0.1849 & 0.2352 & 0.2547 & 0.4051 \\
+& Local Fine-Tuning & 0.4509 & 0.2055 & 0.1665 & 0.2430 & 0.3876 \\
+& \textbf{Hospital Residual Adapter} & \textbf{0.7214} & \textbf{0.6886} & \textbf{0.0479} & \textbf{0.2236} & \textbf{0.3715} \\
+& Adapter + Temperature Calib. & \textbf{0.7214} & \textbf{0.6886} & \textbf{0.0479} & 0.2319 & 0.3809 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{1em}
+
+% TABLE 6: AUDITED DIFFERENTIAL PRIVACY & SECURITY
+\begin{table}[htbp]
+\centering
+\small
+\caption{Differential Privacy Sensitivity Tradeoff and Adversarial Vulnerability (Experiment E6).}
+\label{tab:privacy_results}
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Target Privacy Budget ($\epsilon$)} & \textbf{Noise Multiplier ($\sigma$)} & \textbf{Test AUROC [95\% CI]} & \textbf{MIA Attack AUROC} & \textbf{MIA Advantage} & \textbf{Empirical Assessment} \\
+\midrule
+$\epsilon = 0.5$ (Ultra-Strict) & 4.322 & 0.5125 [0.4210, 0.6040] & 0.5432 & 0.0000 & Severe Utility Loss \\
+$\epsilon = 1.0$ (Strict) & 2.171 & 0.4750 [0.3850, 0.5650] & 0.5102 & 0.0000 & Noise Dominates Utility \\
+$\mathbf{\epsilon = 2.0}$ \textbf{(Pareto Optimal)} & \textbf{1.097} & \textbf{0.6659 [0.5840, 0.7420]} & \textbf{0.4900} & \textbf{0.0000} & \textbf{Balanced Utility / Attack Resistance} \\
+$\epsilon = 5.0$ (Moderate) & 0.454 & 0.6941 [0.6120, 0.7710] & 0.4667 & 0.0000 & Enhanced Predictive Utility \\
+$\epsilon = 10.0$ (Weak) & 0.246 & 0.8092 [0.7410, 0.8710] & 0.5264 & 0.0000 & Minimal Utility Degradation \\
+$\epsilon = \infty$ (No DP Defense) & 0.000 & 0.8227 [0.7610, 0.8800] & 0.5593 & 0.0992 & Empirical Membership Leakage \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\end{document}

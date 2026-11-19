@@ -1,0 +1,6 @@
+scenario,total_clients_n,threshold_t,dropped_count,surviving_count,max_absolute_error,rmse,raw_masked_correlation,verification_status,security_type
+0% Dropout (5/5 Active),5,3,0,5,1.475214958190918e-06,2.8540159631104915e-07,0.0228,EXACT_RECONSTRUCTION_VERIFIED,Research Cryptographic Simulation
+20% Dropout (Hospital 5 Drops),5,3,1,4,1.5981495380401611e-06,3.515510202075236e-07,0.0226,EXACT_RECONSTRUCTION_VERIFIED,Research Cryptographic Simulation
+40% Dropout (Hospitals 4 & 5 Drop),5,3,2,3,2.098735421895981e-06,4.362241215918148e-07,0.026,EXACT_RECONSTRUCTION_VERIFIED,Research Cryptographic Simulation
+60% Dropout (Threshold Breached: 3 Drop),5,3,3,2,,,0.0223,SAFE_ABORT_VERIFIED,Research Cryptographic Simulation
+Adversarial Share Bit-Flip,5,3,0,5,6.1085944175720215,,0.0223,DETECTED_CORRUPTION_DEVIATION (err=6.11),Research Cryptographic Simulation

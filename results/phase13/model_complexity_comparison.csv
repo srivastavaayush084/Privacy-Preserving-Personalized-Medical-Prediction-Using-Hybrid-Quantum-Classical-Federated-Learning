@@ -1,0 +1,5 @@
+model_architecture,encoder_parameters,pqc_quantum_parameters,head_parameters,total_trainable_parameters,quantum_parameter_percentage,serialized_state_dict_bytes,serialized_state_dict_kb,architectural_notes
+Classical_DP_MLP (GroupNorm),0,0,0,5537,0.0,26937,26.31,Input (41) -> Linear(64) -> GN(64) -> Linear(32) -> GN(32) -> Linear(16) -> GN(16) -> Out(1)
+Classical_MLP_Baseline (BatchNorm),0,0,0,5537,0.0,26937,26.31,Input (41) -> Linear(64) -> BN(64) -> Linear(32) -> BN(32) -> Linear(16) -> BN(16) -> Out(1)
+"Hybrid_DP_QNN (4-qubit, depth-2)",772,24,161,957,2.51,7874,7.69,Classical Encoder (772 params) + PQC Circuit (24 params) + Head (161 params)
+PQC_Quantum_Sublayer_Only,0,24,0,24,100.0,96,0.09,"The '24 parameters' claim applies SOLELY to this variational circuit layer, NOT the full hybrid model!"

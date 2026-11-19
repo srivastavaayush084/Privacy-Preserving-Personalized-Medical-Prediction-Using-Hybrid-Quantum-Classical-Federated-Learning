@@ -1,0 +1,10 @@
+Stage,Stays_Count,Unique_Patients,Deaths,Survivors,Description
+1. Raw eICU Patient Encounters,2520,1841,212,2280,All records in eICU demo patient.csv.gz
+2. Excluded: Missing Hospital Discharge Status,28,25,0,0,hospitaldischargestatus is null or unrecorded
+3. Valid Discharge Outcome Cohort,2492,1820,212,2280,"hospitaldischargestatus in ['Alive', 'Expired']"
+"4. Excluded: ICU Observation < 24 Hours (< 1,440 min)",885,718,71,814,unitdischargeoffset < 1440 min; incomplete 24h ICU observation
+  4a. Excluded: Died in ICU Before 24h,46,46,46,0,unitdischargestatus == 'Expired' with unitdischargeoffset < 1440
+  4b. Excluded: Died in Hospital Before 24h Post-ICU Transfer,8,8,8,0,"hospitaldischargeoffset < 1440 min, transferred alive from ICU"
+  4c. Excluded: Died in Hospital >= 24h After Early ICU Transfer,17,15,17,0,"hospitaldischargeoffset >= 1440 min, but unitdischargeoffset < 1440"
+  4d. Excluded: Discharged Alive from ICU Before 24h,814,656,0,814,"hospitaldischargestatus == 'Alive', unitdischargeoffset < 1440"
+5. Primary 24-Hour Landmark Cohort,1607,1317,141,1466,"Alive and in ICU at t=1,440m; earliest death at t=1487m"

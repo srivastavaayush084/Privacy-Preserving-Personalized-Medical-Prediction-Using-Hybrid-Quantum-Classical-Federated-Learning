@@ -1,0 +1,9 @@
+metric,classical_mlp,hybrid_qnn,reduction_or_ratio
+Number of Participating Hospital Clients,5.0,5.0,1.0x
+Number of Federated Training Rounds,10.0,10.0,1.0x
+Total Transmissions (Uplinks + Downlinks),100.0,100.0,1.0x
+Single Payload Size (KB),29.5,8.15,3.62x smaller
+Communication Bandwidth Per Round (MB),0.2881,0.0796,3.62x smaller
+Total Consortium Bandwidth Across 10 Rounds (MB),2.8808,0.7956,3.62x smaller (72.4% reduction)
+Total Trainable Parameters in Model,5537.0,957.0,5.79x fewer parameters
+Variational Quantum Parameters Transmitted,0.0,24.0,24 PQC parameters

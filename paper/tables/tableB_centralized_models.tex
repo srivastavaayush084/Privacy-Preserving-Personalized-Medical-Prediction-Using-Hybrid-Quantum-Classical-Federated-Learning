@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\caption{Centralized Baseline and Quantum Model Performance on Holdout Test Set ($N=393$)}
+\label{tab:centralized_comparison}
+\begin{tabular}{lccccc}
+\hline
+\textbf{Model Architecture} & \textbf{AUROC [95\% CI]} & \textbf{AUPRC [95\% CI]} & \textbf{Brier Loss} & \textbf{F1-Score} & \textbf{Parameters} \\
+\hline
+XGBoost (Depth 4) & \textbf{0.8445} [0.788, 0.894] & \textbf{0.3744} [0.261, 0.495] & \textbf{0.1204} & 0.3704 & Trees \\
+Random Forest (150 trees) & 0.8411 [0.784, 0.895] & 0.3403 [0.228, 0.463] & 0.1216 & \textbf{0.4000} & Trees \\
+Hybrid QNN (4-qubit, L=2) & 0.8346 [0.775, 0.887] & 0.2819 [0.181, 0.404] & 0.1412 & 0.3478 & 957 \\
+Clinical MLP (3-layer) & 0.7944 [0.718, 0.864] & 0.2474 [0.155, 0.362] & 0.1546 & 0.3582 & 5,537 \\
+Logistic Regression (L2) & 0.8170 [0.751, 0.874] & 0.2922 [0.186, 0.413] & 0.1448 & 0.3636 & 42 \\
+Support Vector Machine & 0.7948 [0.730, 0.856] & 0.2764 [0.174, 0.395] & 0.1503 & 0.3396 & Kernel \\
+\hline
+\end{tabular}
+\end{table}

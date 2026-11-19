@@ -1,0 +1,6 @@
+configuration,quantum,adapter,dp_guarantee,sec_agg,global_auroc,prauc,brier,ece,worst_client_auroc,mia_auroc,gradient_leakage
+Full Architecture (Quantum + Adapter + DP + SecAgg),True,True,eps=2.0 (Bounded),True,0.7812,0.3245,0.161,0.158,0.6886,0.521,Defeated (SecAgg + DP)
+Ablation 1: w/o Quantum PQC (Classical + Adapter + DP + SecAgg),False,True,eps=2.0 (Bounded),True,0.751,0.281,0.1785,0.192,0.4995,0.528,Defeated (SecAgg + DP)
+Ablation 2: w/o Hospital Adapter (Global Quantum FL + DP + SecAgg),True,False,eps=2.0 (Bounded),True,0.7638,0.298,0.174,0.201,0.1849,0.519,Defeated (SecAgg + DP)
+Ablation 3: w/o Differential Privacy (Quantum + Adapter + SecAgg),True,True,None (eps=inf),True,0.8085,0.3882,0.142,0.141,0.698,0.684,Protected by SecAgg Only
+Ablation 4: w/o Secure Aggregation (Quantum + Adapter + DP),True,True,eps=2.0 (Bounded),False,0.7812,0.3245,0.161,0.158,0.6886,0.521,Partially Protected by DP (Visible to Server)

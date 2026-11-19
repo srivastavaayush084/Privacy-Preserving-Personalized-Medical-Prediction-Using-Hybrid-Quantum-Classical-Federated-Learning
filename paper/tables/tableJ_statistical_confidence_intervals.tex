@@ -1,0 +1,16 @@
+\begin{table}[t]
+\centering
+\caption{Paired Statistical Comparisons Against Strongest Classical Baselines ($N=393$ Holdout)}
+\label{tab:statistical_comparisons}
+\begin{tabular}{lcccc}
+\hline
+\textbf{Hypothesis Comparison} & \textbf{AUROC Difference ($\Delta$)} & \textbf{95\% Bootstrap CI} & \textbf{p-value} & \textbf{Statistical Verdict} \\
+\hline
+Hybrid QNN vs. XGBoost & -0.0099 & [-0.0612, +0.0384] & $p = 0.692$ & XGBoost superior (not significant) \\
+Hybrid QNN vs. Random Forest & -0.0065 & [-0.0548, +0.0411] & $p = 0.784$ & Random Forest superior (not significant) \\
+Hybrid QNN vs. Clinical MLP & +0.0402 & [-0.0041, +0.0914] & $p = 0.084$ & \textbf{Not Statistically Significant ($p > 0.05$)} \\
+Hybrid QNN (L=2) vs. QNN (L=3) & +0.0813 & [+0.0152, +0.1481] & \textbf{$p = 0.016$} & \textbf{Statistically Significant Degradation} \\
+DP-MLP ($\epsilon=2.0$) vs. Non-Priv & -0.0850 & [-0.1420, -0.0280] & \textbf{$p = 0.004$} & Statistically Significant Privacy Cost \\
+\hline
+\end{tabular}
+\end{table}

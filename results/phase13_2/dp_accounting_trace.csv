@@ -1,0 +1,11 @@
+Model,Target_Epsilon,Achieved_Epsilon,Target_Delta,Achieved_Delta,Sample_Rate,Expected_Batch_Size,Clipping_Bound,Total_Sampler_Iterations,Non_Empty_Batches,Empty_Batches,Optimizer_Updates,Accountant_Steps,Trace_Equality_Holds
+Classical_DP_MLP,1.0,0.9953,1e-05,1e-05,0.055556,62.0,1.0,270,270,0,270,270,True
+Classical_DP_MLP,2.0,1.9954,1e-05,1e-05,0.055556,62.0,1.0,270,270,0,270,270,True
+Classical_DP_MLP,4.0,3.9985,1e-05,1e-05,0.055556,62.0,1.0,270,270,0,270,270,True
+Classical_DP_MLP,8.0,7.9977,1e-05,1e-05,0.055556,62.0,1.0,270,270,0,270,270,True
+Classical_DP_MLP,inf,inf,1e-05,1e-05,0.055556,62.0,1.0,270,270,0,270,270,True
+Hybrid_DP_QNN,1.0,0.994,1e-05,1e-05,0.027778,32.0,1.0,180,180,0,180,180,True
+Hybrid_DP_QNN,2.0,1.9959,1e-05,1e-05,0.027778,32.0,1.0,180,180,0,180,180,True
+Hybrid_DP_QNN,4.0,3.9949,1e-05,1e-05,0.027778,32.0,1.0,180,180,0,180,180,True
+Hybrid_DP_QNN,8.0,7.9944,1e-05,1e-05,0.027778,32.0,1.0,180,180,0,180,180,True
+Hybrid_DP_QNN,inf,inf,1e-05,1e-05,0.027778,32.0,1.0,180,180,0,180,0,False

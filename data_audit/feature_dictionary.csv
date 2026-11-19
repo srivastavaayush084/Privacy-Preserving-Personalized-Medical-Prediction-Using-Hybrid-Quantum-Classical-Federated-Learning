@@ -1,0 +1,209 @@
+table_name,column_name,data_type,total_records,null_percentage,example_values,description
+patient,patientunitstayid,int64,2520,0.0,"[141764, 141765, 143870]",Field patientunitstayid in table patient
+patient,patienthealthsystemstayid,int64,2520,0.0,"[129391, 131022, 131736]",Field patienthealthsystemstayid in table patient
+patient,gender,str,2520,0.16,"['Female', 'Male']",Field gender in table patient
+patient,age,str,2520,0.16,"['87', '76', '34']",Field age in table patient
+patient,ethnicity,str,2520,1.55,"['Caucasian', 'Hispanic', 'Asian']",Field ethnicity in table patient
+patient,hospitalid,int64,2520,0.0,"[59, 68, 56]",Field hospitalid in table patient
+patient,wardid,int64,2520,0.0,"[91, 103, 82]",Field wardid in table patient
+patient,apacheadmissiondx,str,2520,11.87,"['Rhythm disturbance (atrial, supraventricular)', 'Endarterectomy, carotid', 'Overdose, other toxin, poison or drug']",Field apacheadmissiondx in table patient
+patient,admissionheight,float64,2520,2.74,"[157.5, 167.0, 172.7]",Field admissionheight in table patient
+patient,hospitaladmittime24,str,2520,0.0,"['23:36:00', '20:46:00', '01:44:00']",Field hospitaladmittime24 in table patient
+patient,hospitaladmitoffset,int64,2520,0.0,"[-2258, -8, -1]",Field hospitaladmitoffset in table patient
+patient,hospitaladmitsource,str,2520,23.57,"['Operating Room', 'Emergency Department', 'Floor']",Field hospitaladmitsource in table patient
+patient,hospitaldischargeyear,int64,2520,0.0,"[2015, 2014]",Field hospitaldischargeyear in table patient
+patient,hospitaldischargetime24,str,2520,0.0,"['19:20:00', '17:05:00', '21:05:00']",Field hospitaldischargetime24 in table patient
+patient,hospitaldischargeoffset,int64,2520,0.0,"[366, 2616, 1218]",Field hospitaldischargeoffset in table patient
+patient,hospitaldischargelocation,str,2520,1.27,"['Home', 'Other Hospital', 'Other']",Field hospitaldischargelocation in table patient
+patient,hospitaldischargestatus,str,2520,1.11,"['Alive', 'Expired']",Field hospitaldischargestatus in table patient
+patient,unittype,str,2520,0.0,"['Med-Surg ICU', 'SICU', 'MICU']",Field unittype in table patient
+patient,unitadmittime24,str,2520,0.0,"['13:14:00', '23:44:00', '20:47:00']",Field unitadmittime24 in table patient
+patient,unitadmitsource,str,2520,0.87,"['ICU to SDU', 'Emergency Department', 'Operating Room']",Field unitadmitsource in table patient
+patient,unitvisitnumber,int64,2520,0.0,"[2, 1, 3]",Field unitvisitnumber in table patient
+patient,unitstaytype,str,2520,0.0,"['stepdown/other', 'admit', 'readmit']",Field unitstaytype in table patient
+patient,admissionweight,float64,2520,7.86,"[46.5, 77.5, 60.3]",Field admissionweight in table patient
+patient,dischargeweight,float64,2520,50.95,"[45.0, 79.4, 60.7]",Field dischargeweight in table patient
+patient,unitdischargetime24,str,2520,0.0,"['18:58:00', '13:14:00', '10:00:00']",Field unitdischargetime24 in table patient
+patient,unitdischargeoffset,int64,2520,0.0,"[344, 2250, 793]",Field unitdischargeoffset in table patient
+patient,unitdischargelocation,str,2520,0.16,"['Home', 'Step-Down Unit (SDU)', 'Floor']",Field unitdischargelocation in table patient
+patient,unitdischargestatus,str,2520,0.08,"['Alive', 'Expired']",Field unitdischargestatus in table patient
+patient,uniquepid,str,2520,0.0,"['002-1039', '002-12289', '002-1116']",Field uniquepid in table patient
+hospital,hospitalid,int64,186,0.0,"[56, 58, 59]",Field hospitalid in table hospital
+hospital,numbedscategory,str,186,15.05,"['<100', '100 - 249', '>= 500']",Field numbedscategory in table hospital
+hospital,teachingstatus,str,186,0.0,"['f', 't']",Field teachingstatus in table hospital
+hospital,region,str,186,9.68,"['Midwest', 'South', 'West']",Field region in table hospital
+apachePatientResult,apachepatientresultsid,int64,3676,0.0,"[31917, 31918, 21398]",Field apachepatientresultsid in table apachePatientResult
+apachePatientResult,patientunitstayid,int64,3676,0.0,"[141765, 143870, 144815]",Field patientunitstayid in table apachePatientResult
+apachePatientResult,physicianspeciality,str,3676,0.0,"['hospitalist', 'family practice', 'internal medicine']",Field physicianspeciality in table apachePatientResult
+apachePatientResult,physicianinterventioncategory,str,3676,0.0,"['Unknown', 'I', 'III']",Field physicianinterventioncategory in table apachePatientResult
+apachePatientResult,acutephysiologyscore,int64,3676,0.0,"[23, 43, 25]",Field acutephysiologyscore in table apachePatientResult
+apachePatientResult,apachescore,int64,3676,0.0,"[47, 60, 25]",Field apachescore in table apachePatientResult
+apachePatientResult,apacheversion,str,3676,0.0,"['IV', 'IVa']",Field apacheversion in table apachePatientResult
+apachePatientResult,predictedicumortality,float64,3676,0.0,"[0.008247191387781098, 0.012311455455498, 0.01570679673254509]",Field predictedicumortality in table apachePatientResult
+apachePatientResult,actualicumortality,str,3676,0.0,"['ALIVE', 'EXPIRED']",Field actualicumortality in table apachePatientResult
+apachePatientResult,predictediculos,float64,3676,0.0,"[0.722231399105669, 1.37480651018718, 3.0216711758903]",Field predictediculos in table apachePatientResult
+apachePatientResult,actualiculos,float64,3676,0.0,"[1.5625, 0.5506, 0.7784]",Field actualiculos in table apachePatientResult
+apachePatientResult,predictedhospitalmortality,float64,3676,0.0,"[0.03731994885637376, 0.03581394431103214, 0.0289321626122085]",Field predictedhospitalmortality in table apachePatientResult
+apachePatientResult,actualhospitalmortality,str,3676,0.0,"['ALIVE', 'EXPIRED']",Field actualhospitalmortality in table apachePatientResult
+apachePatientResult,predictedhospitallos,float64,3676,0.0,"[2.88170958065951, 3.17392534799226, 6.03262662378308]",Field predictedhospitallos in table apachePatientResult
+apachePatientResult,actualhospitallos,float64,3676,0.0,"[1.8222, 0.8465, 0.8063]",Field actualhospitallos in table apachePatientResult
+apachePatientResult,preopmi,int64,3676,0.0,"[0, 1]",Field preopmi in table apachePatientResult
+apachePatientResult,preopcardiaccath,int64,3676,0.0,"[0, 1]",Field preopcardiaccath in table apachePatientResult
+apachePatientResult,ptcawithin24h,int64,3676,0.0,"[0, 1]",Field ptcawithin24h in table apachePatientResult
+apachePatientResult,unabridgedunitlos,float64,3676,0.0,"[1.5625, 0.5506, 0.7784]",Field unabridgedunitlos in table apachePatientResult
+apachePatientResult,unabridgedhosplos,float64,3676,0.0,"[1.8222, 0.8465, 0.8063]",Field unabridgedhosplos in table apachePatientResult
+apachePatientResult,actualventdays,float64,3676,71.65,"[1.0, 2.0, 3.0]",Field actualventdays in table apachePatientResult
+apachePatientResult,predventdays,float64,3676,72.69,"[4.83146023372939, 3.18891809873627, 0.569796801077842]",Field predventdays in table apachePatientResult
+apachePatientResult,unabridgedactualventdays,float64,3676,71.65,"[1.0, 2.0, 3.0]",Field unabridgedactualventdays in table apachePatientResult
+apacheApsVar,apacheapsvarid,int64,2205,0.0,"[92788, 8893, 79585]",Field apacheapsvarid in table apacheApsVar
+apacheApsVar,patientunitstayid,int64,2205,0.0,"[141765, 143870, 144815]",Field patientunitstayid in table apacheApsVar
+apacheApsVar,intubated,int64,2205,0.0,"[0, 1]",Field intubated in table apacheApsVar
+apacheApsVar,vent,int64,2205,0.0,"[0, 1]",Field vent in table apacheApsVar
+apacheApsVar,dialysis,int64,2205,0.0,"[0, 1]",Field dialysis in table apacheApsVar
+apacheApsVar,eyes,int64,2205,0.0,"[4, -1, 1]",Field eyes in table apacheApsVar
+apacheApsVar,motor,int64,2205,0.0,"[6, -1, 5]",Field motor in table apacheApsVar
+apacheApsVar,verbal,int64,2205,0.0,"[5, 3, -1]",Field verbal in table apacheApsVar
+apacheApsVar,meds,int64,2205,0.0,"[0, -1, 1]",Field meds in table apacheApsVar
+apacheApsVar,urine,float64,2205,0.0,"[-1.0, 674.9568, 0.0]",Field urine in table apacheApsVar
+apacheApsVar,wbc,float64,2205,0.0,"[10.2, 11.7, 7.9]",Field wbc in table apacheApsVar
+apacheApsVar,temperature,float64,2205,0.0,"[36.2, 36.4, 36.7]",Field temperature in table apacheApsVar
+apacheApsVar,respiratoryrate,int64,2205,0.0,"[39, 60, 6]",Field respiratoryrate in table apacheApsVar
+apacheApsVar,sodium,float64,2205,0.0,"[139.0, 133.0, 141.0]",Field sodium in table apacheApsVar
+apacheApsVar,heartrate,int64,2205,0.0,"[88, 40, 131]",Field heartrate in table apacheApsVar
+apacheApsVar,meanbp,int64,2205,0.0,"[108, 47, 61]",Field meanbp in table apacheApsVar
+apacheApsVar,ph,float64,2205,0.0,"[-1.0, 7.38, 7.23]",Field ph in table apacheApsVar
+apacheApsVar,hematocrit,float64,2205,0.0,"[37.8, 34.1, 36.6]",Field hematocrit in table apacheApsVar
+apacheApsVar,creatinine,float64,2205,0.0,"[1.04, 1.14, 0.63]",Field creatinine in table apacheApsVar
+apacheApsVar,albumin,float64,2205,0.0,"[-1.0, 3.6, 2.8]",Field albumin in table apacheApsVar
+apacheApsVar,pao2,float64,2205,0.0,"[-1.0, 76.0, 91.0]",Field pao2 in table apacheApsVar
+apacheApsVar,pco2,float64,2205,0.0,"[-1.0, 81.0, 26.0]",Field pco2 in table apacheApsVar
+apacheApsVar,bun,float64,2205,0.0,"[28.0, 14.0, 6.0]",Field bun in table apacheApsVar
+apacheApsVar,glucose,int64,2205,0.0,"[61, 140, 82]",Field glucose in table apacheApsVar
+apacheApsVar,bilirubin,float64,2205,0.0,"[-1.0, 0.5, 0.7]",Field bilirubin in table apacheApsVar
+apacheApsVar,fio2,int64,2205,0.0,"[-1, 60, 28]",Field fio2 in table apacheApsVar
+apachePredVar,apachepredvarid,int64,2205,0.0,"[4004, 8047, 1798882]",Field apachepredvarid in table apachePredVar
+apachePredVar,patientunitstayid,int64,2205,0.0,"[141765, 143870, 144815]",Field patientunitstayid in table apachePredVar
+apachePredVar,sicuday,int64,2205,0.0,[1],Field sicuday in table apachePredVar
+apachePredVar,saps3day1,int64,2205,0.0,[0],Field saps3day1 in table apachePredVar
+apachePredVar,saps3today,int64,2205,0.0,[0],Field saps3today in table apachePredVar
+apachePredVar,saps3yesterday,int64,2205,0.0,[0],Field saps3yesterday in table apachePredVar
+apachePredVar,gender,int64,2205,0.0,"[1, 0, -1]",Field gender in table apachePredVar
+apachePredVar,teachtype,int64,2205,0.0,[0],Field teachtype in table apachePredVar
+apachePredVar,region,int64,2205,0.0,[3],Field region in table apachePredVar
+apachePredVar,bedcount,int64,2205,0.0,"[12, 14, 8]",Field bedcount in table apachePredVar
+apachePredVar,admitsource,int64,2205,0.0,"[8, 1, 4]",Field admitsource in table apachePredVar
+apachePredVar,graftcount,int64,2205,0.0,"[3, 2, 5]",Field graftcount in table apachePredVar
+apachePredVar,meds,int64,2205,0.0,"[0, -1, 1]",Field meds in table apachePredVar
+apachePredVar,verbal,int64,2205,0.0,"[5, 3, -1]",Field verbal in table apachePredVar
+apachePredVar,motor,int64,2205,0.0,"[6, -1, 5]",Field motor in table apachePredVar
+apachePredVar,eyes,int64,2205,0.0,"[4, -1, 1]",Field eyes in table apachePredVar
+apachePredVar,age,float64,2205,3.76,"[87.0, 76.0, 34.0]",Field age in table apachePredVar
+apachePredVar,admitdiagnosis,str,2205,3.36,"['RHYTHATR', 'S-CAROTEND', 'ODOTHER']",Field admitdiagnosis in table apachePredVar
+apachePredVar,thrombolytics,int64,2205,0.0,"[0, 1]",Field thrombolytics in table apachePredVar
+apachePredVar,diedinhospital,int64,2205,0.0,"[0, 1]",Field diedinhospital in table apachePredVar
+apachePredVar,aids,int64,2205,0.0,[0],Field aids in table apachePredVar
+apachePredVar,hepaticfailure,int64,2205,0.0,"[0, 1]",Field hepaticfailure in table apachePredVar
+apachePredVar,lymphoma,int64,2205,0.0,"[0, 1]",Field lymphoma in table apachePredVar
+apachePredVar,metastaticcancer,int64,2205,0.0,"[0, 1]",Field metastaticcancer in table apachePredVar
+apachePredVar,leukemia,int64,2205,0.0,"[0, 1]",Field leukemia in table apachePredVar
+apachePredVar,immunosuppression,int64,2205,0.0,"[0, 1]",Field immunosuppression in table apachePredVar
+apachePredVar,cirrhosis,int64,2205,0.0,"[0, 1]",Field cirrhosis in table apachePredVar
+apachePredVar,electivesurgery,float64,2205,84.49,"[0.0, 1.0]",Field electivesurgery in table apachePredVar
+apachePredVar,activetx,int64,2205,0.0,"[0, 1]",Field activetx in table apachePredVar
+apachePredVar,readmit,int64,2205,0.0,"[0, 1]",Field readmit in table apachePredVar
+apachePredVar,ima,int64,2205,0.0,"[0, 1]",Field ima in table apachePredVar
+apachePredVar,midur,int64,2205,0.0,"[0, 1]",Field midur in table apachePredVar
+apachePredVar,ventday1,int64,2205,0.0,"[0, 1]",Field ventday1 in table apachePredVar
+apachePredVar,oobventday1,int64,2205,0.0,"[0, 1]",Field oobventday1 in table apachePredVar
+apachePredVar,oobintubday1,int64,2205,0.0,"[0, 1]",Field oobintubday1 in table apachePredVar
+apachePredVar,diabetes,int64,2205,0.0,"[0, 1]",Field diabetes in table apachePredVar
+apachePredVar,managementsystem,int64,2205,0.0,[1],Field managementsystem in table apachePredVar
+apachePredVar,var03hspxlos,int64,2205,0.0,[0],Field var03hspxlos in table apachePredVar
+apachePredVar,pao2,float64,2205,0.0,"[-1.0, 76.0, 91.0]",Field pao2 in table apachePredVar
+apachePredVar,fio2,int64,2205,0.0,"[-1, 60, 28]",Field fio2 in table apachePredVar
+apachePredVar,ejectfx,int64,2205,0.0,"[-1, 35, 20]",Field ejectfx in table apachePredVar
+apachePredVar,creatinine,float64,2205,0.0,"[1.04, 1.14, 0.63]",Field creatinine in table apachePredVar
+apachePredVar,dischargelocation,int64,2205,0.0,"[4, 8, 7]",Field dischargelocation in table apachePredVar
+apachePredVar,visitnumber,int64,2205,0.0,"[1, 2, 3]",Field visitnumber in table apachePredVar
+apachePredVar,amilocation,int64,2205,0.0,"[-1, 2, 4]",Field amilocation in table apachePredVar
+apachePredVar,day1meds,int64,2205,0.0,"[0, -1, 1]",Field day1meds in table apachePredVar
+apachePredVar,day1verbal,int64,2205,0.0,"[5, 3, -1]",Field day1verbal in table apachePredVar
+apachePredVar,day1motor,int64,2205,0.0,"[6, -1, 5]",Field day1motor in table apachePredVar
+apachePredVar,day1eyes,int64,2205,0.0,"[4, -1, 1]",Field day1eyes in table apachePredVar
+apachePredVar,day1pao2,float64,2205,0.0,"[-1.0, 76.0, 91.0]",Field day1pao2 in table apachePredVar
+apachePredVar,day1fio2,int64,2205,0.0,"[-1, 60, 28]",Field day1fio2 in table apachePredVar
+admissionDx,admissiondxid,int64,7578,0.0,"[7351978, 7351977, 7351979]",Field admissiondxid in table admissionDx
+admissionDx,patientunitstayid,int64,7578,0.0,"[2900423, 2902156, 2903553]",Field patientunitstayid in table admissionDx
+admissionDx,admitdxenteredoffset,int64,7578,0.0,"[162, 944, 2]",Field admitdxenteredoffset in table admissionDx
+admissionDx,admitdxpath,str,7578,0.0,"['admission diagnosis|Non-operative Organ Systems|Organ System|Cardiovascular', 'admission diagnosis|Was the patient admitted from the O.R. or went to the O.R. within 4 hours of admission?|No', 'admission diagnosis|All Diagnosis|Non-operative|Diagnosis|Cardiovascular|Sepsis, pulmonary']",Field admitdxpath in table admissionDx
+admissionDx,admitdxname,str,7578,0.0,"['Cardiovascular', 'No', 'Sepsis, pulmonary']",Field admitdxname in table admissionDx
+admissionDx,admitdxtext,str,7578,0.0,"['Cardiovascular', 'No', 'Sepsis, pulmonary']",Field admitdxtext in table admissionDx
+diagnosis,diagnosisid,int64,24978,0.0,"[7607199, 7570429, 7705483]",Field diagnosisid in table diagnosis
+diagnosis,patientunitstayid,int64,24978,0.0,"[346380, 369273, 498848]",Field patientunitstayid in table diagnosis
+diagnosis,activeupondischarge,bool,24978,0.0,"[False, True]",Field activeupondischarge in table diagnosis
+diagnosis,diagnosisoffset,int64,24978,0.0,"[5028, 685, 5035]",Field diagnosisoffset in table diagnosis
+diagnosis,diagnosisstring,str,24978,0.0,"['cardiovascular|ventricular disorders|hypertension', 'neurologic|altered mental status / pain|change in mental status', 'cardiovascular|shock / hypotension|hypotension']",Field diagnosisstring in table diagnosis
+diagnosis,icd9code,str,24978,15.1,"['401.9, I10', '780.09, R41.82', '458.9, I95.9']",Field icd9code in table diagnosis
+diagnosis,diagnosispriority,str,24978,0.0,"['Other', 'Major', 'Primary']",Field diagnosispriority in table diagnosis
+lab,labid,int64,434660,0.0,"[437880563, 437880572, 437880560]",Field labid in table lab
+lab,patientunitstayid,int64,434660,0.0,"[1754323, 2330077, 3177225]",Field patientunitstayid in table lab
+lab,labresultoffset,int64,434660,0.0,"[-647, -207, 3573]",Field labresultoffset in table lab
+lab,labtypeid,int64,434660,0.0,"[3, 1, 7]",Field labtypeid in table lab
+lab,labname,str,434660,0.0,"['Hct', 'platelets x 1000', 'RBC']",Field labname in table lab
+lab,labresult,float64,434660,0.63,"[38.3, 181.0, 4.86]",Field labresult in table lab
+lab,labresulttext,str,434660,0.0,"['38.3', '181', '4.86']",Field labresulttext in table lab
+lab,labmeasurenamesystem,str,434660,4.35,"['%', 'K/mcL', 'M/mcL']",Field labmeasurenamesystem in table lab
+lab,labmeasurenameinterface,str,434660,4.35,"['%', 'k/mm cu', 'm/mm cu']",Field labmeasurenameinterface in table lab
+lab,labresultrevisedoffset,int64,434660,0.0,"[-631, -175, 3651]",Field labresultrevisedoffset in table lab
+vitalPeriodic,vitalperiodicid,int64,1634960,0.0,"[29524122, 29557845, 29524442]",Field vitalperiodicid in table vitalPeriodic
+vitalPeriodic,patientunitstayid,int64,1634960,0.0,"[141765, 141764, 143870]",Field patientunitstayid in table vitalPeriodic
+vitalPeriodic,observationoffset,int64,1634960,0.0,"[1179, 189, 1169]",Field observationoffset in table vitalPeriodic
+vitalPeriodic,temperature,float64,1634960,93.1,"[35.8, 36.4, 37.2]",Field temperature in table vitalPeriodic
+vitalPeriodic,sao2,float64,1634960,11.82,"[97.0, 96.0, 98.0]",Field sao2 in table vitalPeriodic
+vitalPeriodic,heartrate,float64,1634960,0.43,"[82.0, 76.0, 84.0]",Field heartrate in table vitalPeriodic
+vitalPeriodic,respiration,float64,1634960,15.51,"[30.0, 22.0, 29.0]",Field respiration in table vitalPeriodic
+vitalPeriodic,cvp,float64,1634960,87.63,"[19.0, 223.0, 222.0]",Field cvp in table vitalPeriodic
+vitalPeriodic,etco2,float64,1634960,95.55,"[29.0, 31.0, 30.0]",Field etco2 in table vitalPeriodic
+vitalPeriodic,systemicsystolic,float64,1634960,86.15,"[113.0, 111.0, 117.0]",Field systemicsystolic in table vitalPeriodic
+vitalPeriodic,systemicdiastolic,float64,1634960,86.15,"[45.0, 36.0, 46.0]",Field systemicdiastolic in table vitalPeriodic
+vitalPeriodic,systemicmean,float64,1634960,86.03,"[64.0, 54.0, 65.0]",Field systemicmean in table vitalPeriodic
+vitalPeriodic,pasystolic,float64,1634960,98.04,"[19.0, 37.0, 33.0]",Field pasystolic in table vitalPeriodic
+vitalPeriodic,padiastolic,float64,1634960,98.04,"[11.0, 22.0, 20.0]",Field padiastolic in table vitalPeriodic
+vitalPeriodic,pamean,float64,1634960,98.0,"[11.0, 28.0, 25.0]",Field pamean in table vitalPeriodic
+vitalPeriodic,st1,float64,1634960,62.49,"[0.0, -0.1, -0.30000001]",Field st1 in table vitalPeriodic
+vitalPeriodic,st2,float64,1634960,59.82,"[-1.7, -0.69999999, -1.0]",Field st2 in table vitalPeriodic
+vitalPeriodic,st3,float64,1634960,63.52,"[-1.7, -0.69999999, -1.0]",Field st3 in table vitalPeriodic
+vitalPeriodic,icp,float64,1634960,99.19,"[8.0, 1.0, 7.0]",Field icp in table vitalPeriodic
+vitalAperiodic,vitalaperiodicid,int64,274088,0.0,"[3661418, 3661424, 3661417]",Field vitalaperiodicid in table vitalAperiodic
+vitalAperiodic,patientunitstayid,int64,274088,0.0,"[141764, 141765, 143870]",Field patientunitstayid in table vitalAperiodic
+vitalAperiodic,observationoffset,int64,274088,0.0,"[81, 334, 77]",Field observationoffset in table vitalAperiodic
+vitalAperiodic,noninvasivesystolic,float64,274088,11.78,"[171.0, 153.0, 176.0]",Field noninvasivesystolic in table vitalAperiodic
+vitalAperiodic,noninvasivediastolic,float64,274088,11.77,"[90.0, 78.0, 87.0]",Field noninvasivediastolic in table vitalAperiodic
+vitalAperiodic,noninvasivemean,float64,274088,11.28,"[116.0, 103.0, 107.0]",Field noninvasivemean in table vitalAperiodic
+vitalAperiodic,paop,float64,274088,99.94,"[8.0, 11.0, 14.0]",Field paop in table vitalAperiodic
+vitalAperiodic,cardiacoutput,float64,274088,94.81,"[7.0, 5.0, 4.8000002]",Field cardiacoutput in table vitalAperiodic
+vitalAperiodic,cardiacinput,float64,274088,95.67,"[2.9300001, 2.0899999, 2.01]",Field cardiacinput in table vitalAperiodic
+vitalAperiodic,svr,float64,274088,93.51,"[410.0, 809.0, 348.0]",Field svr in table vitalAperiodic
+vitalAperiodic,svri,float64,274088,98.74,"[1911.0, 2523.0, 2508.0]",Field svri in table vitalAperiodic
+vitalAperiodic,pvr,float64,274088,99.94,"[137.0, 96.0, 83.0]",Field pvr in table vitalAperiodic
+vitalAperiodic,pvri,float64,274088,99.94,"[328.0, 229.0, 199.0]",Field pvri in table vitalAperiodic
+medication,medicationid,int64,75604,0.0,"[7278819, 9726266, 10293599]",Field medicationid in table medication
+medication,patientunitstayid,int64,75604,0.0,"[141765, 143870, 144815]",Field patientunitstayid in table medication
+medication,drugorderoffset,int64,75604,0.0,"[134, 1, 115]",Field drugorderoffset in table medication
+medication,drugstartoffset,int64,75604,0.0,"[1396, -188, 856]",Field drugstartoffset in table medication
+medication,drugivadmixture,str,75604,0.0,"['No', 'Yes']",Field drugivadmixture in table medication
+medication,drugordercancelled,str,75604,0.0,"['No', 'Yes']",Field drugordercancelled in table medication
+medication,drugname,str,75604,40.55,"['WARFARIN SODIUM 5 MG PO TABS', '5 ML VIAL : DILTIAZEM HCL 25 MG/5ML IV SOLN', 'ASPIRIN EC 81 MG PO TBEC']",Field drugname in table medication
+medication,drughiclseqno,float64,75604,5.87,"[2812.0, 182.0, 1820.0]",Field drughiclseqno in table medication
+medication,dosage,str,75604,12.31,"['5 3', '15 3', '81 3']",Field dosage in table medication
+medication,routeadmin,str,75604,0.07,"['PO', 'IV', 'SC']",Field routeadmin in table medication
+medication,frequency,str,75604,15.58,"['Once PRN', 'Daily', 'Q6H SCH']",Field frequency in table medication
+medication,loadingdose,str,75604,99.99,"['0 mg                                                                                                ', '150 ml                                                                                              ']",Field loadingdose in table medication
+medication,prn,str,75604,0.01,"['No', 'Yes']",Field prn in table medication
+medication,drugstopoffset,int64,75604,0.0,"[2739, 171, 2428]",Field drugstopoffset in table medication
+medication,gtc,int64,75604,0.0,"[0, 38, 17]",Field gtc in table medication
+treatment,treatmentid,int64,38290,0.0,"[9579899, 8788989, 10293108]",Field treatmentid in table treatment
+treatment,patientunitstayid,int64,38290,0.0,"[242895, 243097, 243999]",Field patientunitstayid in table treatment
+treatment,treatmentoffset,int64,38290,0.0,"[838, 512, 70]",Field treatmentoffset in table treatment
+treatment,treatmentstring,str,38290,0.0,"['cardiovascular|arrhythmias|anticoagulant administration|low molecular weight heparin|enoxaparin', 'cardiovascular|consultations|Cardiology consultation', 'cardiovascular|non-operative procedures|external pacemaker']",Field treatmentstring in table treatment
+treatment,activeupondischarge,bool,38290,0.0,"[False, True]",Field activeupondischarge in table treatment

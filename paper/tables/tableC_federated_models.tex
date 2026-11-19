@@ -1,0 +1,15 @@
+\begin{table}[t]
+\centering
+\caption{Federated Learning Strategy Comparison Across 5 Non-IID Hospital Clients (10 Rounds)}
+\label{tab:federated_comparison}
+\begin{tabular}{lccccc}
+\hline
+\textbf{Federated Strategy} & \textbf{Model Type} & \textbf{Peak AUROC ($R^*$)} & \textbf{Final AUROC ($R_{10}$)} & \textbf{AUPRC} & \textbf{Bandwidth} \\
+\hline
+Classical FedAvg & Clinical MLP & 0.7796 (R3) & 0.5940 & 0.3763 & 2.88 MB \\
+Classical FedProx ($\mu=0.01$) & Clinical MLP & 0.6570 (R6) & 0.5899 & 0.2066 & 2.88 MB \\
+Hybrid Quantum FedAvg & Hybrid QNN & 0.7455 (R3) & 0.6434 & 0.2502 & \textbf{0.80 MB} \\
+Hybrid Quantum FedProx & Hybrid QNN & 0.6987 (R10) & \textbf{0.6987} & 0.2250 & \textbf{0.80 MB} \\
+\hline
+\end{tabular}
+\end{table}

@@ -1,0 +1,15 @@
+\begin{table}[t]
+\centering
+\caption{Dual-Metric Reporting: Best Early-Stopping Validation Round vs. Asymptotic Round 10}
+\label{tab:dual_metric_rounds}
+\begin{tabular}{lcccc}
+\hline
+\textbf{Model \& Strategy} & \textbf{Best Val Round ($k^*$)} & \textbf{Best Val AUROC} & \textbf{Round 10 AUROC} & \textbf{Drift Degradation ($\Delta$)} \\
+\hline
+Classical FedAvg & Round 3 & 0.7796 & 0.5940 & -0.1856 \\
+Classical FedProx & Round 6 & 0.6570 & 0.5899 & -0.0671 \\
+Hybrid Quantum FedAvg & Round 3 & 0.7455 & 0.6434 & -0.1021 \\
+Hybrid Quantum FedProx & Round 10 & 0.6987 & 0.6987 & \textbf{0.0000 (Stable)} \\
+\hline
+\end{tabular}
+\end{table}

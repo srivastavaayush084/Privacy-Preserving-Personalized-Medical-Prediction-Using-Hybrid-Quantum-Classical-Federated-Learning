@@ -1,0 +1,16 @@
+Target_Epsilon,Metric,Classical_MLP_Score,Hybrid_QNN_Score,Point_Difference_QNN_minus_MLP,Bootstrap_Mean_Diff,Bootstrap_SE,CI_95_Lower,CI_95_Upper,P_Value_TwoSided,Statistically_Significant,Interpretation
+1.0,Delta_AUROC,0.5857,0.5904,0.0047,0.0054,0.0566,-0.1028,0.1135,0.92,False,95% CI spans zero; no statistically significant difference; no quantum advantage demonstrated
+1.0,Delta_AUPRC,0.1772,0.1382,-0.039,-0.0484,0.0441,-0.1522,0.0194,0.21,False,95% CI spans zero; no statistically significant difference; no quantum advantage demonstrated
+1.0,Delta_Brier,0.1144,0.1139,-0.0005,-0.0005,0.0002,-0.0008,-0.0002,0.0,True,Statistically significant difference in Brier score
+2.0,Delta_AUROC,0.5778,0.6184,0.0406,0.0419,0.0529,-0.057,0.1489,0.416,False,95% CI spans zero; no statistically significant difference; no quantum advantage demonstrated
+2.0,Delta_AUPRC,0.1898,0.1522,-0.0377,-0.0481,0.0506,-0.1693,0.0332,0.312,False,95% CI spans zero; no statistically significant difference; no quantum advantage demonstrated
+2.0,Delta_Brier,0.1145,0.1139,-0.0006,-0.0006,0.0002,-0.0009,-0.0003,0.0,True,Statistically significant difference in Brier score
+4.0,Delta_AUROC,0.6016,0.641,0.0394,0.0397,0.0496,-0.0583,0.1404,0.396,False,95% CI spans zero; no statistically significant difference; no quantum advantage demonstrated
+4.0,Delta_AUPRC,0.1945,0.1675,-0.027,-0.0359,0.0489,-0.1574,0.0427,0.476,False,95% CI spans zero; no statistically significant difference; no quantum advantage demonstrated
+4.0,Delta_Brier,0.1143,0.1138,-0.0005,-0.0005,0.0002,-0.001,-0.0002,0.0,True,Statistically significant difference in Brier score
+8.0,Delta_AUROC,0.6281,0.6648,0.0367,0.037,0.0468,-0.0553,0.1279,0.424,False,95% CI spans zero; no statistically significant difference; no quantum advantage demonstrated
+8.0,Delta_AUPRC,0.2006,0.1817,-0.0189,-0.0245,0.0488,-0.1399,0.0604,0.63,False,95% CI spans zero; no statistically significant difference; no quantum advantage demonstrated
+8.0,Delta_Brier,0.1142,0.1136,-0.0006,-0.0006,0.0003,-0.0012,-0.0001,0.018,True,Statistically significant difference in Brier score
+inf,Delta_AUROC,0.7166,0.7658,0.0491,0.0487,0.0461,-0.0424,0.1397,0.31,False,95% CI spans zero; no statistically significant difference; no quantum advantage demonstrated
+inf,Delta_AUPRC,0.2722,0.2957,0.0235,0.0246,0.0535,-0.0868,0.1237,0.608,False,95% CI spans zero; no statistically significant difference; no quantum advantage demonstrated
+inf,Delta_Brier,0.1621,0.1106,-0.0516,-0.053,0.0218,-0.0955,-0.0094,0.018,True,Statistically significant difference in Brier score

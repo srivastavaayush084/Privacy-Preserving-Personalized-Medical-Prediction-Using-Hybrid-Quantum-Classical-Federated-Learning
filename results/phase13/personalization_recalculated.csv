@@ -1,0 +1,7 @@
+client_partition,partitioning_type,n_test_total,n_test_positive_deaths,positive_prevalence_pct,statistical_power_flag,global_model_auroc,global_model_95ci,personalized_adapter_auroc,personalized_adapter_95ci,absolute_auroc_gain,relative_auroc_gain_pct,personalized_qnn_auroc,personalized_qnn_95ci,audit_finding
+Hospital_Node_1,Dirichlet (alpha=0.5),5,2,40.0,UNINFORMATIVE_CELL_SIZE,1.0,"[1.000, 1.000]",0.8333,"[0.250, 1.000]",-0.1667,-16.67,0.3333,"[0.000, 1.000]",High variance due to small N_pos
+Hospital_Node_2,Dirichlet (alpha=0.5),88,12,13.64,SUFFICIENT_CELL_SIZE,0.9814,"[0.954, 1.000]",0.9704,"[0.929, 0.995]",-0.011,-1.12,0.3904,"[0.215, 0.554]",Reliable adaptation signal
+Hospital_Node_3,Dirichlet (alpha=0.5),220,2,0.91,UNINFORMATIVE_CELL_SIZE,0.8899,"[0.789, 0.977]",0.9106,"[0.867, 0.949]",0.0206,2.32,0.7752,"[0.565, 0.963]",High variance due to small N_pos
+Hospital_Node_4,Dirichlet (alpha=0.5),64,18,28.12,SUFFICIENT_CELL_SIZE,0.6884,"[0.544, 0.820]",0.6739,"[0.526, 0.815]",-0.0145,-2.11,0.5121,"[0.333, 0.685]",Reliable adaptation signal
+Hospital_Node_5,Dirichlet (alpha=0.5),16,6,37.5,SUFFICIENT_CELL_SIZE,0.8333,"[0.564, 1.000]",0.8333,"[0.582, 1.000]",0.0,0.0,0.5833,"[0.252, 0.884]",Reliable adaptation signal
+Consortium_5 (Phase 11 Modulo),Deterministic Hash (hospitalid % 5),79,6,7.59,EXTREME_STATISTICAL_UNCERTAINTY (N_pos=6),0.1849,"[0.021, 0.432]",0.8151,"[0.552, 0.985]",0.6302,340.83,0.8151,"[0.552, 0.985]","CLAIM WITHDRAWN: Wide CI [0.552, 0.985] on 6 deaths; cosmetic 'rural' label unverified in eICU metadata"

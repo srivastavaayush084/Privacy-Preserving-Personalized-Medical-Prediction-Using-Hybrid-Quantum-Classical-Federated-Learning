@@ -1,0 +1,16 @@
+\begin{table}[t]
+\centering
+\caption{Secure Aggregation Benchmark Under Client Dropout (Shamir $t=3, n=5, p=2^{31}-1$)}
+\label{tab:secure_aggregation}
+\begin{tabular}{lcccccc}
+\hline
+\textbf{Dropout Scenario} & $n$ & $t$ & \textbf{Surviving} & \textbf{Max Absolute Error} & \textbf{RMSE} & \textbf{Protocol Status} \\
+\hline
+0\% Dropout (All Active) & 5 & 3 & 5 & $1.48 \times 10^{-6}$ & $2.85 \times 10^{-7}$ & Exact Reconstruction Verified \\
+20\% Dropout (1 Drop) & 5 & 3 & 4 & $1.60 \times 10^{-6}$ & $3.52 \times 10^{-7}$ & Exact Reconstruction Verified \\
+40\% Dropout (2 Drops) & 5 & 3 & 3 & $2.10 \times 10^{-6}$ & $4.36 \times 10^{-7}$ & Exact Reconstruction Verified \\
+60\% Dropout (3 Drops) & 5 & 3 & 2 & N/A (Aborted) & N/A & \textbf{Safe Abort Verified ($|\mathcal{S}| < t$)} \\
+Adversarial Bit-Flip & 5 & 3 & 5 & 6.1086 & N/A & Corruption Detected \\
+\hline
+\end{tabular}
+\end{table}

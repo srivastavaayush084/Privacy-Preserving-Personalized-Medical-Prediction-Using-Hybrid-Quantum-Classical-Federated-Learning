@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering
+\caption{Federated Network Communication Overhead Across 10 Synchronous Rounds (5 Clients)}
+\label{tab:communication_overhead}
+\begin{tabular}{lccc}
+\hline
+\textbf{Network Communication Metric} & \textbf{Classical FL (MLP)} & \textbf{Hybrid Quantum FL (QNN)} & \textbf{Reduction / Savings} \\
+\hline
+Participating Clients ($K$) & 5 & 5 & Identical \\
+Federated Rounds ($R$) & 10 & 10 & Identical \\
+Total Network Messages & 100 & 100 & Identical \\
+Single Payload Size & 29.50 KB & 8.15 KB & \textbf{3.62x smaller} \\
+Consortium Bandwidth per Round & 0.2881 MB & 0.0796 MB & \textbf{3.62x smaller} \\
+\textbf{Total Consortium Bandwidth} & \textbf{2.8808 MB} & \textbf{0.7956 MB} & \textbf{72.38\% reduction (3.62x)} \\
+Trainable Model Parameters & 5,537 & 957 & 5.79x fewer parameters \\
+Transmitted Variational Angles & 0 & 24 & Compact PQC footprint \\
+\hline
+\end{tabular}
+\end{table}

@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\caption{Personalization Performance, Client Sample Sizes, and Statistical Power Flags}
+\label{tab:personalization_results}
+\begin{tabular}{lcccccc}
+\hline
+\textbf{Client Partition} & $N_{\text{test}}$ & $N_{\text{pos}}$ & \textbf{Prevalence} & \textbf{Global AUROC [95\% CI]} & \textbf{Adapter AUROC [95\% CI]} & \textbf{Validity Status} \\
+\hline
+Node 1 (Dirichlet) & 5 & 2 & 40.0\% & 1.0000 [1.000, 1.000] & 0.8333 [0.250, 1.000] & \textbf{Uninformative ($N_{\text{pos}}=2$)} \\
+Node 2 (Dirichlet) & 88 & 12 & 13.6\% & 0.9814 [0.954, 1.000] & 0.9704 [0.929, 0.995] & Sufficient Sample \\
+Node 3 (Dirichlet) & 220 & 2 & 0.9\% & 0.8899 [0.789, 0.977] & 0.9106 [0.867, 0.949] & \textbf{Uninformative ($N_{\text{pos}}=2$)} \\
+Node 4 (Dirichlet) & 64 & 18 & 28.1\% & 0.6884 [0.544, 0.820] & 0.6739 [0.526, 0.815] & Sufficient Sample \\
+Node 5 (Dirichlet) & 16 & 6 & 37.5\% & 0.8333 [0.564, 1.000] & 0.8333 [0.582, 1.000] & Sufficient Sample \\
+\hline
+Consortium 5 (Modulo) & 79 & 6 & 7.6\% & 0.1849 [0.021, 0.432] & 0.8151 [0.552, 0.985] & \textbf{Claim Withdrawn ($N_{\text{pos}}=6$)} \\
+\hline
+\end{tabular}
+\end{table}

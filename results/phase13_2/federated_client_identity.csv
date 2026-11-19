@@ -1,0 +1,6 @@
+Client_ID,Display_Name,Partition_Nature,N_Train_Encounters,N_Train_Hospitals_Represented,N_Train_Positive,Train_Mortality_Rate,N_Val_Encounters,N_Test_Encounters,N_Test_Positive,Test_Mortality_Rate,Local_Model_AUROC,Local_Model_PRAUC,Global_FedAvg_AUROC,Global_FedAvg_PRAUC,Personalized_FineTuned_AUROC,Personalized_FineTuned_PRAUC,Personalization_Gain_over_Global_AUROC
+Hospital_Node_1,Federated Node 1 (Dirichlet alpha=0.5),Synthetic Dirichlet Partition (alpha=0.5) over eICU Stays,137,88,5,0.0365,7,29,5,0.1724,0.5417,0.2279,0.725,0.419,0.625,0.2906,-0.1
+Hospital_Node_2,Federated Node 2 (Dirichlet alpha=0.5),Synthetic Dirichlet Partition (alpha=0.5) over eICU Stays,85,65,5,0.0588,40,21,1,0.0476,0.2,0.0588,1.0,1.0,1.0,1.0,0.0
+Hospital_Node_3,Federated Node 3 (Dirichlet alpha=0.5),Synthetic Dirichlet Partition (alpha=0.5) over eICU Stays,661,181,67,0.1014,59,82,2,0.0244,0.7,0.0744,0.8,0.1979,0.6875,0.0733,-0.1125
+Hospital_Node_4,Federated Node 4 (Dirichlet alpha=0.5),Synthetic Dirichlet Partition (alpha=0.5) over eICU Stays,116,84,6,0.0517,94,7,1,0.1429,0.5,0.25,0.6667,0.3333,0.6667,0.3333,0.0
+Hospital_Node_5,Federated Node 5 (Dirichlet alpha=0.5),Synthetic Dirichlet Partition (alpha=0.5) over eICU Stays,133,91,6,0.0451,34,102,19,0.1863,0.6056,0.2785,0.6703,0.3333,0.6855,0.3453,0.0152

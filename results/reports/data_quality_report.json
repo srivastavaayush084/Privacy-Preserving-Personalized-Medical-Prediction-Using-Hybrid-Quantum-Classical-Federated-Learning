@@ -1,0 +1,78 @@
+{
+  "leakage_verification": {
+    "is_leakage_free": true,
+    "train_val_overlap_patients": 0,
+    "train_test_overlap_patients": 0,
+    "val_test_overlap_patients": 0
+  },
+  "feature_count": 41,
+  "feature_names": [
+    "age",
+    "bmi",
+    "heartrate",
+    "meanbp",
+    "respiratoryrate",
+    "temperature",
+    "sodium",
+    "creatinine",
+    "bun",
+    "glucose",
+    "wbc",
+    "hematocrit",
+    "shock_index",
+    "bun_to_creatinine",
+    "gcs_total",
+    "comorbidity_burden",
+    "organ_support_count",
+    "gender_Female",
+    "gender_Male",
+    "ethnicity_African American",
+    "ethnicity_Asian",
+    "ethnicity_Caucasian",
+    "ethnicity_Hispanic",
+    "ethnicity_Native American",
+    "ethnicity_Other/Unknown",
+    "unittype_CCU-CTICU",
+    "unittype_CSICU",
+    "unittype_CTICU",
+    "unittype_Cardiac ICU",
+    "unittype_MICU",
+    "unittype_Med-Surg ICU",
+    "unittype_Neuro ICU",
+    "unittype_SICU",
+    "region_Midwest",
+    "region_Northeast",
+    "region_South",
+    "region_West",
+    "ph_is_missing",
+    "pao2_is_missing",
+    "bilirubin_is_missing",
+    "albumin_is_missing"
+  ],
+  "splits": {
+    "train": {
+      "name": "Train",
+      "total_encounters": 1712,
+      "unique_patients": 1274,
+      "mortality_positive": 142,
+      "mortality_negative": 1570,
+      "mortality_rate_percent": 8.29
+    },
+    "val": {
+      "name": "Validation",
+      "total_encounters": 387,
+      "unique_patients": 273,
+      "mortality_positive": 30,
+      "mortality_negative": 357,
+      "mortality_rate_percent": 7.75
+    },
+    "test": {
+      "name": "Test",
+      "total_encounters": 393,
+      "unique_patients": 273,
+      "mortality_positive": 40,
+      "mortality_negative": 353,
+      "mortality_rate_percent": 10.18
+    }
+  }
+}
