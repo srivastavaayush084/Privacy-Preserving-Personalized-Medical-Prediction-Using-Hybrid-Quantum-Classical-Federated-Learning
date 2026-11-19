@@ -184,21 +184,4 @@ uvicorn src.inference.predict_api:app --host 0.0.0.0 --port 8000
 
 ---
 
-## 6. Citation & Research Ethics
-
-This work utilizes de-identified clinical data from the eICU Collaborative Research Database under PhysioNet Credentialed Data Use Agreement. All differential privacy mechanisms, secret-sharing cryptosystems, and statistical validations adhere to rigorous open-science reproducibility standards.
-
-```bibtex
-@article{srivastava2026privacypreserving,
-  title={Privacy-Preserving Personalized Medical Prediction Using Hybrid Quantum-Classical Federated Learning},
-  author={Srivastava, Ayush and Collaborators},
-  journal={IEEE Transactions on Biomedical Engineering (Under Review)},
-  year={2026}
-}
-```
-
----
-
-## 7. License
-
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
