@@ -1,0 +1,90 @@
+{
+  "phase": "13.3.5",
+  "phase_name": "Final Source-Level Verification and Audit Closure",
+  "timestamp": "2026-11-19T23:26:00Z",
+  "audit_decision": "DECISION A",
+  "pytest_summary": {
+    "total_tests": 70,
+    "passed": 70,
+    "failed": 0,
+    "skipped": 0,
+    "warnings": 20,
+    "exit_code": 0,
+    "duration_seconds": 104.56
+  },
+  "reconciled_calibration_parameters": {
+    "val_platt_slope": 0.4415,
+    "val_platt_intercept": -0.0924,
+    "val_resampling_slope_95ci": [
+      -0.1176,
+      0.8572
+    ],
+    "test_calibrated_cox_slope": 1.7096,
+    "test_calibrated_cox_intercept": 0.1081
+  },
+  "paired_bootstrap_comparison_qnn_vs_mlp": {
+    "iterations": 2000,
+    "delta_auroc": {
+      "value": 0.0494,
+      "ci_95": [
+        -0.0409,
+        0.1393
+      ],
+      "p_value": 0.29
+    },
+    "delta_auprc": {
+      "value": 0.0244,
+      "ci_95": [
+        -0.0772,
+        0.1309
+      ],
+      "p_value": 0.624
+    },
+    "delta_brier_platt": {
+      "value": 0.0015,
+      "ci_95": [
+        -0.0049,
+        0.0078
+      ],
+      "p_value": 0.629
+    }
+  },
+  "files": {
+    "research/phase13_3_5/CALIBRATION_SLOPE_RECONCILIATION.md": {
+      "sha256": "c14d0778dd8662932546879a28973d0e30ee1d3bada261d64024df7f49dd40ab",
+      "size_bytes": 10959
+    },
+    "research/phase13_3_5/VALIDATION_RESAMPLING_VERIFICATION.md": {
+      "sha256": "05d8d0e8fd07a563b6620037b2a5b761e2c6b3e9d10b4dc2d243308e48aca014",
+      "size_bytes": 7831
+    },
+    "research/phase13_3_5/PATIENT_BOOTSTRAP_SOURCE_AUDIT.md": {
+      "sha256": "a334660f21d91113868824eac094c61efc8fb7cb13be63ea41146cfa4c19e89c",
+      "size_bytes": 7069
+    },
+    "research/phase13_3_5/FINAL_TEST_EXECUTION_EVIDENCE.md": {
+      "sha256": "90c83764b45f5a62731e28b11c760eede9f38d305c4067f3948393fb865fa53c",
+      "size_bytes": 6489
+    },
+    "research/phase13_3_5/DCA_FINAL_VERIFICATION.md": {
+      "sha256": "7af0cf46e6eb412ffc3cd43842eb962b4f838731d1ea721c1c1ea03a5c116014",
+      "size_bytes": 8110
+    },
+    "research/phase13_3_5/PHASE_13_3_5_FINAL_REPORT.md": {
+      "sha256": "58e58cc398a78c0b54c0e44241b273b74e13b4a784ed3a41627e95a7318df20c",
+      "size_bytes": 17971
+    },
+    "results/phase13_3_5/pytest_output.txt": {
+      "sha256": "052effec3b777eaf1d8960276e334bb39bd96e4f450fd1fc5d37aaea138f6f4a",
+      "size_bytes": 20458
+    },
+    "experiments/phase13_3_4/run_phase13_3_4_audit.py": {
+      "sha256": "3dfcb8cd2839d31f9445aba035cab6aa35f6acc8036dedb7e2ea746d34f86f43",
+      "size_bytes": 50053
+    },
+    "src/privacy/formal_dp_engine.py": {
+      "sha256": "bc6c9b36c4a69a7097345247985cf27f403172a4a85d9adbaa000012738f8710",
+      "size_bytes": 20675
+    }
+  }
+}

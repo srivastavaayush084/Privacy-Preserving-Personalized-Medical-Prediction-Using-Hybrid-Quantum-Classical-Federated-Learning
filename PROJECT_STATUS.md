@@ -161,4 +161,22 @@ python -m pytest tests/
      - `CLINICAL_OPERATING_POINT_VERIFICATION.md`
      - `QUANTUM_CLASSICAL_FINAL_COMPARISON.md`
      - `PHASE_13_3_4_FINAL_REPORT.md`
-- **Next Phase:** Phase 14 (IEEE Research Manuscript Preparation) — Awaiting user review and authorization.
+### Phase 13.3.5: Final Source-Level Verification and Audit Closure
+- **Status:** **COMPLETED & BASELINE FROZEN — DECISION A** (November 19, 2026)
+- **Automated Tests:** **70/70 Passing (100% Pass Rate)**, Exit Code 0, Execution Duration 104.56s.
+- **Audit Findings & Deliverables:**
+  1. **Calibration Slope Reconciliation:** Fully resolved apparent paradox between validation Platt slope ($a_{\text{val}} = 0.4415$, 95% CI: $[-0.1176, 0.8572]$) and test-set Cox calibration slope ($\beta_{\text{test}} = 1.7096$, intercept $\alpha_{\text{test}} = 0.1081$). Conflation traced to narrative reporting note; underlying predictions and code verified mathematically sound.
+  2. **Validation Resampling Audit:** Verified 1,000 bootstrap resamples on validation patient clusters; 0 resamples discarded, 0 single-class samples, 0 convergence failures. The "10,000 refits" accounted for as 10 models $\times$ 1,000 bootstrap draws, all converging with zero divergence.
+  3. **Patient-Clustered Test Bootstrap Audit:** All 2,000 test bootstrap iterations resampled intact patient clusters ($198$ patients, $241$ stays). Confirmed paired comparisons on identical samples: $\Delta \text{AUROC} = +0.0494$ ($p = 0.290$), $\Delta \text{AUPRC} = +0.0244$ ($p = 0.624$), and $\Delta \text{Brier (Platt)} = +0.0015$ ($p = 0.629$). No statistically significant superiority exists.
+  4. **Test Suite Verification:** Full test suite verified clean via `python -m pytest` with 70 passed tests and 0 failures. Resolved previous Exit Code 1 as Windows path resolution of `pytest.exe`.
+  5. **Decision Curve Analysis Verification:** Verified Net Benefit across $p_t \in [0.05, 0.30]$. At $p_t = 0.05$, QNN, MLP, and Treat-All tie at $0.0697$. QNN achieves net benefit superiority over Treat-All and Treat-None for $p_t \in [0.09, 0.25]$. DCA formally classified as exploratory secondary analysis.
+  6. **Strict Research Boundaries:** Quantum advantage refuted (parity established); record-level DP only ($|\mathcal{D}\Delta\mathcal{D}'|=1$); simulated secure aggregation; pre-clinical retrospective evidence.
+  7. **Phase 13.3.5 Deliverables (`research/phase13_3_5/` & `results/phase13_3_5/`):**
+     - `CALIBRATION_SLOPE_RECONCILIATION.md`
+     - `VALIDATION_RESAMPLING_VERIFICATION.md`
+     - `PATIENT_BOOTSTRAP_SOURCE_AUDIT.md`
+     - `FINAL_TEST_EXECUTION_EVIDENCE.md`
+     - `DCA_FINAL_VERIFICATION.md`
+     - `PHASE_13_3_5_FINAL_REPORT.md`
+     - `pytest_output.txt`, `verification_manifest.json`, `checksums.sha256`
+- **Next Phase:** Phase 14 (IEEE Research Manuscript Preparation) — Baseline frozen; awaiting explicit user instruction.

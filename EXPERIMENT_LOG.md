@@ -118,3 +118,21 @@
 - **Artifacts Generated:**
   - Reports: `research/phase13_3_4/` (7 markdown files).
   - Data & Plots: `results/phase13_3_4/` (6 CSVs, 5 high-res PNG plots, manifest, sha256 checksums).
+
+---
+
+## [Phase 13.3.5] - Final Source-Level Verification and Audit Closure (2026-11-19)
+- **Objective:** Independently audit Phase 13.3.4 source code, calibration coefficients, validation resampling, patient-clustered test bootstrapping, pytest execution, and DCA net benefit prior to baseline freeze.
+- **Commands Executed:**
+  - `python -m pytest -v` (70/70 passing, Exit Code: 0, Duration: 104.56s, output saved to `results/phase13_3_5/pytest_output.txt`)
+  - Verification hashing and manifest creation
+- **Key Results & Reconciliation:**
+  - Calibration slope discrepancy resolved: Validation Platt slope $a_{\text{val}} = 0.4415$ (95% CI: $[-0.1176, 0.8572]$) vs Test Cox calibration slope $\beta_{\text{test}} = 1.7096$ (intercept $\alpha_{\text{test}} = 0.1081$). Conflation identified in Phase 13.3.4 narrative text; code and predictions verified correct.
+  - Validation resampling audit: 1,000 resamples by `uniquepid`; 0 discarded, 0 single-class, 0 convergence warnings. The "10,000 refits" = 10 models $\times$ 1,000 draws.
+  - Test bootstrap audit: 2,000 patient-clustered iterations. $\Delta \text{AUROC} = +0.0494$ ($p = 0.290$), $\Delta \text{AUPRC} = +0.0244$ ($p = 0.624$), $\Delta \text{Brier (Platt)} = +0.0015$ ($p = 0.629$). Complete parity confirmed.
+  - DCA verification: Exact tie at $p_t = 0.05$ ($0.0697$). QNN superior over treat-all/none in $p_t \in [0.09, 0.25]$. Categorized as exploratory secondary analysis.
+  - Research claims locked: Parity confirmed, quantum advantage refuted, record-level centralized DP ($|\mathcal{D}\Delta\mathcal{D}'|=1$), simulated SecAgg, pre-clinical.
+  - Audit Decision: **DECISION A (Baseline Formally Frozen)**.
+- **Artifacts Generated:**
+  - Reports: `research/phase13_3_5/` (6 markdown files: `CALIBRATION_SLOPE_RECONCILIATION.md`, `VALIDATION_RESAMPLING_VERIFICATION.md`, `PATIENT_BOOTSTRAP_SOURCE_AUDIT.md`, `FINAL_TEST_EXECUTION_EVIDENCE.md`, `DCA_FINAL_VERIFICATION.md`, `PHASE_13_3_5_FINAL_REPORT.md`).
+  - Results: `results/phase13_3_5/` (`pytest_output.txt`, `verification_manifest.json`, `checksums.sha256`).
