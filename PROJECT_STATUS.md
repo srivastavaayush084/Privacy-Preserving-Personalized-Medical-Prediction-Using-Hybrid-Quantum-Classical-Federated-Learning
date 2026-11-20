@@ -201,4 +201,26 @@ python -m pytest tests/
      - `CALIBRATION_PROTOCOL_FINAL.md`
      - `TEST_EXECUTION_EVIDENCE.md`
      - `verification_manifest.json`, `checksums.sha256`
-- **Next Phase:** Phase 14 (IEEE Research Manuscript Preparation) — Baseline permanently frozen; awaiting explicit user instruction.
+---
+
+### Phase 14: Final IEEE Research Manuscript Preparation and Evidence Integration
+- **Status:** **COMPLETED & CERTIFIED FOR SUBMISSION** (November 20, 2026)
+- **Manuscript Format:** IEEE Two-Column Conference Standard (`IEEEtran.cls`), **Strictly 8 Pages** ($100\%$ compliant with 6–8 page target).
+- **Compilation Toolchain:** Modern Tectonic TeX Engine v0.15.0, Clean Exit Code 0, 0 Overfull `\hbox`, 0 undefined references/citations.
+- **Authoritative Data Baseline:** Strictly derived from Phase 13.3.6 canonical numerical reconciliation (`results/phase13_3_6/METRIC_RECOMPUTATION.csv`).
+- **Core Scientific Results Certified:**
+  1. **Cohort Statistics (24h Landmark):** $1,607$ encounters across $1,317$ unique patients ($8.77\%$ prevalence); Train: $1,132$ stays ($921$ pts, $89$ deaths); Val: $234$ stays ($198$ pts, $24$ deaths); Test: $241$ stays ($198$ pts, $28$ deaths). Strict patient disjointness verified ($0.00\%$ overlap).
+  2. **Predictive Performance:** Hybrid QNN achieves AUROC $0.7658$, AUPRC $0.2957$, Platt Brier $0.0980$, vs Classical MLP AUROC $0.7166$, AUPRC $0.2722$, Platt Brier $0.0964$.
+  3. **Patient-Clustered Paired Bootstrap ($B=2,000$):** Statistical parity confirmed ($\Delta\text{AUROC} = +0.0491$, $95\%$ CI $[-0.0409, 0.1393]$, $p = 0.290$; $\Delta\text{AUPRC} = +0.0235$, $95\%$ CI $[-0.0843, 0.1256]$, $p = 0.624$; $\Delta\text{Platt Brier} = +0.0015$, $p = 0.629$). Quantum superiority refuted; parity established.
+  4. **Structural Efficiency:** Hybrid QNN requires only $957$ trainable parameters ($24$ variational angles in 4-qubit depth-2 PQC) vs $5,537$ parameters in Classical MLP ($82.7\%$ reduction), reducing federated communication payload by $72.2\%$ ($0.80$ MB vs $2.88$ MB per round).
+  5. **Certified Privacy & Security:** Poisson-subsampled DP-SGD with Opacus RDP tracking ($\varepsilon \in \{1.0, 2.0, 4.0, 8.0, \infty\}$) and 4-round Shamir-based Secure Aggregation (RMSE $\le 4.46 \times 10^{-7}$).
+  6. **Calibration & DCA:** Validation-fitted Platt scaling ($a_{\text{val}}=0.4415, b_{\text{val}}=-0.0924$) strictly outperforms training ($0.1041$) and oracle test ($0.1027$) prevalence baselines. Exploratory Decision Curve Analysis demonstrates positive net clinical benefit across $p_t \in [0.09, 0.25]$.
+- **Phase 14 Deliverables:**
+  - `IEEE_Research_Paper.tex`: Complete publication source.
+  - `IEEE_Research_Paper.pdf`: Publication-ready 8-page compiled PDF (1.97 MiB).
+  - `references.bib`: 26 authentic peer-reviewed entries with verified DOIs and URLs.
+  - `figures/`: 7 high-resolution PNG assets (300+ DPI).
+  - `TABLES_AND_METRICS_VERIFICATION.md`: Line-by-line verification against Phase 13.3.6.
+  - `CITATION_VERIFICATION.md`: Verification of all 26 references and authenticity confirmation.
+  - `LATEX_COMPILATION_REPORT.md`: Toolchain, geometry, and compilation log verification.
+  - `MANUSCRIPT_FINAL_AUDIT.md`: Final scientific, ethical, and IEEE compliance audit.

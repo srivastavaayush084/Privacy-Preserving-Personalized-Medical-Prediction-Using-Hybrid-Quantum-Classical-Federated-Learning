@@ -31,3 +31,13 @@ $RECYCLE.BIN/
 
 # Sensitive environment variables
 .env
+
+# TeX binaries and intermediates
+tectonic_bin/
+*.aux
+*.bbl
+*.blg
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk
